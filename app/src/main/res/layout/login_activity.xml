@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login" >
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/Custom.Font.Title.H1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sys_title" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="46dp"
+        android:background="@drawable/bg_div_border"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/background_color"
+            android:padding="15dp"
+            android:src="@drawable/user" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_color_gray" >
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_user"
+            style="@style/Custom.EditText.Noline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/loginName"
+            android:inputType="textNoSuggestions"
+            android:maxLength="25"
+            android:singleLine="true" >
+        </EditText>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableRow1"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_div_border" >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@color/background_color"
+            android:padding="15dp"
+            android:src="@drawable/pwd" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/line_color_gray" >
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_pwd"
+            style="@style/Custom.EditText.Noline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/pwd"
+            android:imeOptions="actionGo"
+            android:inputType="textPassword"
+            android:maxLength="25"
+            android:singleLine="true" >
+        </EditText>
+    </TableRow>
+
+    <TextView
+        android:id="@+id/tv_error"
+        style="@style/Custom.Font.Context.Error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableRow2"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/bg_msg_border"
+        android:padding="5dp"
+        android:clickable="true"
+        android:onClick="setNet"
+        android:text="0x01 用户名密码不匹配"
+        android:visibility="invisible" />
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableRow2"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="50dp" >
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/Custom.Button"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:onClick="login"
+            android:text="@string/login" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/Custom.Font.Context"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="setting"
+        android:layout_marginBottom="50dp"
+        android:text="@string/copyright" />
+
+</RelativeLayout>

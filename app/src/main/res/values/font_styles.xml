@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	本文件定义工程中所有字体样式
+ -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="Custom.Font">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+    
+    <style name="Custom.Font.Title">
+        <item name="android:textStyle">bold</item>  
+    </style>
+    
+    <style name="Custom.Font.Title.H1">
+        <item name="android:textSize">60sp</item>    
+    </style> 
+    <style name="Custom.Font.Title.H2">
+        <item name="android:textSize">45sp</item>    
+    </style>
+    <style name="Custom.Font.Title.H3">
+        <item name="android:textSize">30sp</item>    
+    </style>
+    <style name="Custom.Font.Context">
+        <item name="android:textSize">20sp</item>    
+    </style>
+    <style name="Custom.Font.Context.Inverse">
+        <item name="android:textColor">@color/text_color_inverse</item>
+    </style>
+    <style name="Custom.Font.Context.Footer">
+        <item name="android:textColor">@color/text_color_light_black</item>
+    </style>
+    <style name="Custom.Font.Context.Error">
+        <item name="android:textColor">@color/text_color_error</item>    
+    </style>
+    
+    <style name="Custom.Font.EditText">
+        <item name="android:textColor">@color/text_color_inverse</item>
+    </style> 
+    <style name="Custom.Font.Label">
+        <item name="android:textSize">25sp</item>  
+        <item name="android:textColor">@color/text_color_inverse</item>
+    </style>
+     <style name="Custom.Font.Label.Sum">
+        <item name="android:textSize">28sp</item>  
+        <item name="android:textColor">@color/text_color_inverse</item>
+    </style>
+    <style name="Custom.Font.Label.Title">
+        <item name="android:textSize">30sp</item>  
+        <item name="android:textColor">@color/head_color</item>
+    </style>
+    
+</resources>

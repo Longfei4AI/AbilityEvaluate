@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res/"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical" 
+    android:orientation="horizontal"
+    >
+        <com.elder.abilityevaluate.view.CornerImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            zhy:src="@drawable/dog"
+            zhy:type="circle" />
+        <TextView 
+            android:text="这是Banner"
+            android:layout_width="match_parent"
+    		android:layout_height="40dp" 
+            style="@style/Banner.text"/>
+</LinearLayout>

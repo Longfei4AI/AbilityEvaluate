@@ -1,0 +1,239 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_form" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/head_color" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/Custom.Font.Title.H2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/head_color"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:onClick="back"
+            android:src="@drawable/icon_back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/header" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/Custom.FormBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_transferbill"
+                    style="@style/Custom.Font.Label.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="网络设置" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_table" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="服务器地址：" />
+
+                        <EditText
+                            android:id="@+id/et_ipaddress"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:inputType="textNoSuggestions"
+                            android:singleLine="true"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="服务器端口：" />
+
+                        <EditText
+                            android:id="@+id/et_port"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:singleLine="true"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/tr_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:gravity="center" >
+
+                        <Button
+                            android:id="@+id/button1"
+                            style="@style/Custom.Button.Blue"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="70dp"
+                            android:onClick="save"
+                            android:text="@string/save" />
+                        <Space android:layout_width="10dp" android:layout_height="1dp"/>
+                        <Button
+                            android:id="@+id/button2"
+                            style="@style/Custom.Button.White"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="70dp"
+                            android:onClick="revert"
+                            android:text="@string/revert" />
+                    </TableRow>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Custom.FormBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/Custom.Font.Label.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="版本更新" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_table" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_version_name"
+                        style="@style/Custom.Font.Context.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="20dp"
+                        android:text="当前版本：V1.1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_update"
+                        style="@style/Custom.Font.Context.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:onClick="update"
+                        android:paddingLeft="20dp"
+                        android:text="检测更新" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Custom.Font.Context.Inverse"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:clickable="true"
+                        android:gravity="center_vertical"
+                        android:onClick="about"
+                        android:paddingLeft="20dp"
+                        android:text="关于我们" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

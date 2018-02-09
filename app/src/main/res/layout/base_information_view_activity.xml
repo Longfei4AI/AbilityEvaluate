@@ -1,0 +1,804 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_form" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/head_color" >
+
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/Custom.Font.Title.H2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/head_color"
+            android:gravity="center"
+            android:text="@string/base_information"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:onClick="back"
+            android:src="@drawable/icon_back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tr_button"
+        android:layout_below="@+id/header" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/Custom.FormBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/Custom.Font.Label.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/evaluation" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_table" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_1_1" />
+
+                        <EditText
+                            android:id="@+id/a_1_1_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:inputType="textNoSuggestions"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_1_2" />
+
+                        <EditText
+                            android:id="@+id/a_1_2_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_1_3" />
+
+                        <EditText
+                            android:id="@+id/a_1_3_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Custom.FormBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/Custom.Font.Label.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/elder_information" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_table" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_1" />
+
+                        <EditText
+                            android:id="@+id/a_2_1_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_2" />
+
+                        <EditText
+                            android:id="@+id/a_2_2_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_3" />
+
+                        <EditText
+                            android:id="@+id/a_2_3_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_4" />
+
+                        <EditText
+                            android:id="@+id/a_2_4_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_5" />
+
+                        <EditText
+                            android:id="@+id/a_2_5_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_6" />
+
+                        <EditText
+                            android:id="@+id/a_2_6_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_7" />
+
+                        <EditText
+                            android:id="@+id/a_2_7_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_8" />
+
+                        <EditText
+                            android:id="@+id/a_2_8_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_9" />
+
+                        <EditText
+                            android:id="@+id/a_2_9_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_10" />
+
+                        <EditText
+                            android:id="@+id/a_2_10_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_11" />
+
+                        <EditText
+                            android:id="@+id/a_2_11_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_12" />
+
+                        <EditText
+                            android:id="@+id/a_2_12_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_13" />
+
+                        <EditText
+                            android:id="@+id/a_2_13_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_14" />
+
+                        <EditText
+                            android:id="@+id/a_2_14_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Custom.FormBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/Custom.Font.Label.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/contact_information" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line_table" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_3_1" />
+
+                        <EditText
+                            android:id="@+id/a_3_1_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_3_2" />
+
+                        <EditText
+                            android:id="@+id/a_3_2_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_3_3" />
+
+                        <EditText
+                            android:id="@+id/a_3_3_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_3_4" />
+
+                        <EditText
+                            android:id="@+id/a_3_4_et"
+                            style="@style/Custom.EditText"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </EditText>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TableRow
+        android:id="@+id/tr_button"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" >
+
+        <Button
+            style="@style/Custom.Button.White"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:onClick="edit"
+            android:text="@string/edit" />
+        <Button
+            style="@style/Custom.Button.Blue"
+            android:layout_marginLeft="0dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="70dp"
+            android:onClick="evaluate"
+            android:text="@string/ability_evaluate" />
+    </TableRow>
+
+</RelativeLayout>

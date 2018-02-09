@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_layout"
+    android:layout_width="500dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_dialog"
+    android:baselineAligned="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:minHeight="300dp"
+    android:minWidth="200dp" >
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/Custom.Font.Label.Title"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="bottom"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:text="@string/about"
+        android:textSize="40sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_title"
+        android:background="@color/line_color_gray"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_user_info"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_title"
+        android:divider="@color/line_color_gray"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp" >
+    </ListView>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lv_user_info"
+        android:padding="20dp" >
+
+        <Button
+            android:id="@+id/button_close"
+            style="@style/Custom.Button.White"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:text="@string/close" />
+    </TableRow>
+
+</RelativeLayout>

@@ -1,0 +1,426 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_color" >
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/head_color"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/logo_w" />
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/Custom.Font.Title.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/custom_corp" />
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/text_color" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            style="@style/Custom.Font.Context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/app_fullname"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="110dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:clickable="true"
+        android:onClick="logOut"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/user_info" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            style="@style/Custom.Font.Context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:text="" >
+            <requestFocus />
+        </TextView>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/textView1"
+        android:layout_below="@+id/header" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:id="@+id/tr1"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/menu1"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/bg_menu01"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+					
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:contentDescription="@string/checking"
+                        android:src="@drawable/icon_check" />
+						
+                    <TextView
+                        android:id="@+id/lable_menu01"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/checking"
+                        android:textSize="35sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu2"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/bg_menu02"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:contentDescription="@string/weighting"
+                        android:src="@drawable/icon_weight" />
+
+                    <TextView
+                        android:id="@+id/lable_menu02"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/weighting"
+                        android:textSize="35sp" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr2"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal" >
+                <LinearLayout
+                    android:id="@+id/menu3"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/bg_menu03"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/leaf_change_grade"
+                        android:src="@drawable/icon_leaf_changegrade" />
+
+                    <TextView
+                        android:id="@+id/lable_menu08"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/leaf_change_grade"
+                        android:textSize="35sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu4"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/bg_menu04"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/store_export"
+                        android:src="@drawable/icon_year_carryover" />
+
+                    <TextView
+                        android:id="@+id/lable_menu06"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/store_export"
+                        android:textSize="35sp" />
+                </LinearLayout>
+            </TableRow>
+            
+            <TableRow
+                android:id="@+id/tr3"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/menu5"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/bg_menu03"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/store_check"
+                        android:src="@drawable/icon_store_check" />
+
+                    <TextView
+                        android:id="@+id/lable_menu07"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/store_check"
+                        android:textSize="35sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu6"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/bg_menu01"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/store_move"
+                        android:src="@drawable/icon_store_move" />
+
+                    <TextView
+                        android:id="@+id/lable_menu05"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/store_move"
+                        android:textSize="35sp" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr4"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/menu9"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/bg_menu03"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/store_sum"
+                        android:src="@drawable/icon_store_sum" />
+
+                    <TextView
+                        android:id="@+id/lable_menu010"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/store_sum"
+                        android:textSize="35sp" />
+                </LinearLayout>
+                
+                <LinearLayout
+                    android:id="@+id/menu10"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/bg_menu03"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:layout_marginLeft="40dp"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView101"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/leaf_change_grade"
+                        android:src="@drawable/icon_chang_grade" />
+
+                    <TextView
+                        android:id="@+id/lable_menu102"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/leaf_change_scan_grade"
+                        android:textSize="35sp" />
+                </LinearLayout>
+            </TableRow>
+            <TableRow
+                android:id="@+id/tr5"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/menu7"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:background="@drawable/bg_menu03"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/downloading"
+                        android:src="@drawable/icon_download" />
+
+                    <TextView
+                        android:id="@+id/lable_menu03"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/downloading"
+                        android:textSize="35sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/menu8"
+                    android:layout_width="210dp"
+                    android:layout_height="210dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/bg_menu04"
+                    android:clickable="true"
+                    android:gravity="center_horizontal"
+                    android:onClick="menuClick"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="130dp"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/setting"
+                        android:src="@drawable/icon_setting" />
+
+                    <TextView
+                        android:id="@+id/lable_menu04"
+                        style="@style/Custom.Font.Context"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/setting"
+                        android:textSize="35sp" />
+                </LinearLayout>
+            </TableRow>
+            
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/Custom.Font.Context"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:text="@string/copyright"
+        android:textColor="@color/head_color" />
+
+</RelativeLayout>

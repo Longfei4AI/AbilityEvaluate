@@ -1,0 +1,167 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="vpiTabPageIndicatorStyle">@style/CustomWidget.TabPageIndicator</item>
+        <item name="android:windowNoTitle">true</item>    
+        <item name="android:animationDuration">5000</item>  
+        <item name="android:windowContentOverlay">@null</item>    
+    </style>
+
+    <style name="CustomWidget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>  
+        <item name="android:background">@drawable/vpi__tab_indicator</item>  
+        <item name="android:paddingLeft">22dip</item>  
+        <item name="android:paddingRight">22dip</item>  
+        <item name="android:paddingTop">8dp</item>  
+        <item name="android:paddingBottom">8dp</item>  
+        <item name="android:textAppearance">@style/CustomTextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">25sp</item>  
+        <item name="android:maxLines">1</item>  
+    </style>  
+  
+    <style name="CustomTextAppearance.TabPageIndicator" parent="Widget">
+        <item name="android:textColor">@color/text_color</item>  
+    </style>  
+    
+    <style name="activity" parent="android:Theme.Translucent.NoTitleBar.Fullscreen">
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="vpiTabPageIndicatorStyle">@style/CustomWidget.TabPageIndicator</item>
+        <item name="android:windowNoTitle">true</item>    
+        <item name="android:animationDuration">5000</item>  
+        <item name="android:windowContentOverlay">@null</item>  
+    </style>
+    
+    <style name="Banner.text"  parent="Widget">
+        <item name="android:textAppearance">@style/CustomTextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">24sp</item>  
+    </style>
+    
+    <style name="Custom">
+    </style>
+    <!-- EditText 样式 -->
+    <style name="Custom.EditText">
+        <item name="android:textAppearance">@style/Custom.Font.EditText</item>
+        <item name="android:textSize">30sp</item>  
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textColorHint">@color/text_color_hint</item>
+    </style>
+    <!-- EditText 样式 -->
+    <style name="Custom.EditText.Noline">
+        <item name="android:textAppearance">@style/Custom.Font.EditText</item>
+        <item name="android:textSize">30sp</item>  
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@drawable/bg_edittext</item>
+        <item name="android:textColorHint">@color/text_color_hint</item>
+    </style>
+     <!-- 按钮 样式 -->
+    <style name="Custom.Spinner">
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/spinner</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textColor">@color/text_color_inverse</item>
+    </style>
+    <!-- 按钮 样式 -->
+    <style name="Custom.Button">
+        <item name="android:layout_height">80dp</item>
+        <item name="android:minHeight">80dp</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:minWidth">150dp</item>
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textColor">@drawable/text_button</item>
+    </style>
+    <style name="Custom.Yellow">
+        <item name="android:background">@drawable/icon</item>
+    </style>
+    <style name="Custom.Button.Yellow">
+        <item name="android:background">@drawable/bg_button_y</item>
+    </style>
+    <style name="Custom.Button.Green">
+        <item name="android:background">@drawable/bg_button_g</item>
+    </style>
+    <style name="Custom.Button.Blue">
+        <item name="android:background">@drawable/bg_button_b</item>
+    </style>
+    <style name="Custom.Button.White">
+        <item name="android:background">@drawable/bg_button_w</item>
+        <item name="android:textColor">@color/main_color</item>
+    </style>
+    
+    <!-- EditText 样式 -->
+    <style name="Custom.Fragment">
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:background">@color/background_color</item>
+    </style>
+    
+    <style name="Custom.FormBox">
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:background">@drawable/bg_formbox</item>
+        <!-- 
+         -->
+    </style>
+    
+    <style name="Custom.Dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    
+    <style name="Custom.LoadingDialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 模糊 -->
+    </style>
+    
+    <!-- 表格头 -->
+    <style name="Custom.Table">
+        <item name="android:textAppearance">@style/Custom.Font.Context.Inverse</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!-- 子表格头 -->
+    <style name="Custom.Table.Header">
+        <item name="android:background">@drawable/table_header</item>
+        <item name="android:layout_height">65dp</item>
+    </style>
+    <!-- 表格头 尾 -->
+    <style name="Custom.Table.Header.Last">
+        <item name="android:background">@drawable/table_header_e</item>
+    </style>
+    <!-- 表格体 -->
+    <style name="Custom.Table.Cell">
+        <item name="android:background">@drawable/table_cell</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:minHeight">60dp</item>
+    </style>
+    <!-- 表格体 尾 -->
+    <style name="Custom.Table.Cell.Last">
+        <item name="android:background">@drawable/table_cell_e</item>
+    </style>
+    
+    <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/custom_progress_bar</item>
+        <item name="android:layout_width">33dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="image_button">
+        <item name="android:background">#00000000</item>
+    </style>
+</resources>

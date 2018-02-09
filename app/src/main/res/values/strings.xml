@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">老人能力评估</string>
+    <string name="app_fullname">老年人能力评估系统</string>
+    <string name="custom_corp">智能评估</string>
+    <string name="sys_title">能&#160;力&#160;评&#160;估</string>
+    <string name="hello_world">欢迎您!</string>
+    <string name="prolusion_1">关爱老人&#160;&#160;</string>
+    <string name="prolusion_2">&#160;&#160;关注健康</string>
+    <string name="loading">数据加载中，请稍候\u2026</string>
+    <string name="tip">提示</string>
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="close">关&#160;&#160;&#160;&#160;&#160;&#160;&#160;闭</string>
+    <string name="query">查询</string>
+    <string name="add">增加</string>
+    <string name="edit">修改</string>
+    <string name="delete">删除</string>
+    <string name="account">记账</string>
+    <string name="search">查询</string>
+    <string name="operate">操作</string>
+    <string name="remark">备注：</string>
+    <string name="show"></string>
+    <string name="scan">扫码</string>
+    <string name="save">保&#160;&#160;&#160;&#160;&#160;&#160;&#160;存</string>
+    <string name="submit">提&#160;&#160;&#160;&#160;&#160;&#160;&#160;交</string>
+    <string name="revert">还&#160;&#160;&#160;&#160;&#160;&#160;&#160;原</string>
+    <string name="loginName">登录名</string>
+    <string name="pwd">密&#160;&#160;码</string>
+    <string name="login">登&#160;&#160;&#160;&#160;&#160;&#160;&#160;录</string>
+    <string name="logout">注&#160;&#160;&#160;&#160;&#160;&#160;&#160;销</string>
+    <string name="copyright">©2018 老年人能力评估</string>
+    <string name="checking">A1</string>
+    <string name="setting">系统设置</string>
+    <string name="weighting">A2</string>
+    <string name="downloading">档案下载</string>
+
+    <string name="base_information">基本信息</string>
+    <string name="ability_evaluate">能力评估</string>
+    <string name="report_evaluate">评估报告</string>
+    
+    <string name="store_move">A3</string>
+    <string name="store_check">A4</string>
+    <string name="change_grade_only">A5</string>
+    <string name="store_export">A6</string>
+    <string name="leaf_change_grade">A7</string>
+    <string name="leaf_change_scan_grade">A8</string>
+    <string name="store_sum">A9</string>
+    
+    <string name="index">序号</string>
+
+
+    <string-array name = "sell_form" >
+        <item>Arr1</item>
+        <item>Arr2</item>
+    </string-array>
+    
+    <string name="user_info">用户档案</string>
+    <string name="about">关于我们</string>
+
+    
+    <string-array name = "select_lisence_no" >
+        <item>请选择</item>
+    </string-array>
+    
+    <!-- 错误提示 -->
+    <string name="error_global_net_off"><u>网络未开启，不能进行登录验证。点此设置</u></string>
+    <string name="error_login_01">(0x01)用户名不能为空！</string>
+    <string name="error_login_02">(0x02)密码不能为空！</string>
+    <string name="error_login_03">(0x03)用户名或密码错误！</string>
+    <string name="error_login_04">(0x04)该用户已禁用，请联系管理员。</string>
+    <string name="error_login_FF">(0xFF)<u>连接服务器异常，点此查看网络设置。</u></string>
+    
+    <string name="error_getdata_FF">连接服务器异常，数据获取失败！</string>
+    <string name="error_uploaddata_FF">连接服务器异常，数据上报失败！</string>
+    <string name="error_accountdata_FF">连接服务器异常，操作失败！</string>
+
+    <!-- 消息提示 -->
+    <string name="msg_landing">正在验证用户名、密码，请稍候</string>
+    <string name="msg_exit_one_more_press">再按一次返回键，退出程序。</string>
+    
+    <string name="pickdate">选择日期</string>
+
+    <!-- 带参数信息 -->
+    <string name="page_sum">共 %d 条记录。</string>
+    <string name="page_no_result">未查到符合条件的记录。</string>
+    <string name="transfer_code">N0.%s</string>
+    <string name="transfer_info">%1$s 于 %2$s 发出 %3$s %4$s 。</string>
+
+    <!-- 自定义组件 -->
+    <string name="pull_to_refresh">下拉加载数据</string>
+    <string name="release_to_refresh">松开开始加载</string>
+    <string name="lastUpdateTime">最近更新：%s</string>
+    <string name="load_full">已加载全部</string>
+    <string name="no_data">暂无数据</string>
+    <string name="more">加载中</string>
+    <string name="scan_text">将条码放入框内, 即可自动扫描</string>
+
+    <!--基本信息-->
+    <string name="evaluation">评估基本信息</string>
+    <string name="a_1_1">A.1.1 评估编号</string>
+    <string name="a_1_2">A.1.2 评估基准日期</string>
+    <string name="a_1_3">A.1.3 评估原因</string>
+
+    <string name="elder_information">被评估者基本信息</string>
+    <string name="a_2_1">A.2.1 姓名</string>
+    <string name="a_2_2">A.2.2 性别</string>
+    <string name="a_2_3">A.2.3 出生日期</string>
+    <string name="a_2_4">A.2.4 身份证号</string>
+    <string name="a_2_5">A.2.5 社保卡号</string>
+    <string name="a_2_6">A.2.6 民族</string>
+    <string name="a_2_6_1">A.2.6.1 少数民族</string>
+    <string name="a_2_7">A.2.7 文化程度</string>
+    <string name="a_2_8">A.2.8 宗教信仰</string>
+    <string name="a_2_8_1">A.2.8.1 有宗教信仰</string>
+    <string name="a_2_9">A.2.9 婚姻状况</string>
+    <string name="a_2_10">A.2.10 居住状况</string>
+    <string name="a_2_11">A.2.11 医疗费用支付方式</string>
+    <string name="a_2_11_1">A.2.11.1 其他支付方式</string>
+    <string name="a_2_12">A.2.12 经济来源</string>
+    <string name="a_2_13">A.2.13 疾病诊断</string>
+    <string name="a_2_13_1">A.2.13.1 痴呆</string>
+    <string name="a_2_13_2">A.2.13.2 精神疾病</string>
+    <string name="a_2_13_3">A.2.13.3 慢性疾病</string>
+    <string name="a_2_14">A.2.14 近30天内意外事件</string>
+    <string name="a_2_14_1">A.2.14.1 跌倒</string>
+    <string name="a_2_14_2">A.2.14.2 走失</string>
+    <string name="a_2_14_3">A.2.14.3 噎食</string>
+    <string name="a_2_14_4">A.2.14.4 自杀</string>
+    <string name="a_2_14_5">A.2.14.5 其他</string>
+
+    <string name="contact_information">联系人信息</string>
+    <string name="a_3_1">A.3.1 信息提供者姓名</string>
+    <string name="a_3_2">A.3.2 信息提供者与老人的关系</string>
+    <string name="a_3_3">A.3.3 联系人姓名</string>
+    <string name="a_3_4">A.3.4 联系人电话</string>
+    <string name="not_evaluate">未评估</string>
+    <string name="evaluated">已评估</string>
+
+    <string name="daily_activity">日常活动</string>
+    <string name="b_1_1">B.1.1 进食</string>
+    <string name="b_1_2">B.1.2 洗澡</string>
+    <string name="b_1_3">B.1.3 修饰</string>
+    <string name="b_1_4">B.1.4 穿衣</string>
+    <string name="b_1_5">B.1.5 大便控制</string>
+    <string name="b_1_6">B.1.6 小便控制</string>
+    <string name="b_1_7">B.1.7 如厕</string>
+    <string name="b_1_8">B.1.8 床椅转移</string>
+    <string name="b_1_9">B.1.9 平地行走</string>
+    <string name="b_1_10">B.1.10 上下楼梯</string>
+    <string name="b_1_score">B.1 总分</string>
+    <string name="b_1_level">B.1 等级</string>
+
+    <string name="psychosis">精神状态</string>
+    <string name="b_2_1">B.2.1 认知功能</string>
+    <string name="b_2_2">B.2.2 攻击行为</string>
+    <string name="b_2_3">B.2.3 抑郁症状</string>
+    <string name="b_2_score">B.2 总分</string>
+    <string name="b_2_level">B.2 等级</string>
+
+    <string name="sense_communication">感知沟通</string>
+    <string name="b_3_1">B.3.1 意识水平</string>
+    <string name="b_3_2">B.3.2 视力</string>
+    <string name="b_3_3">B.3.3 听力</string>
+    <string name="b_3_4">B.3.4 沟通交流</string>
+    <string name="b_3_score">B.3 总分</string>
+    <string name="b_3_level">B.3 等级</string>
+
+    <string name="social_participation">社会参与</string>
+    <string name="b_4_1">B.4.1 生活能力</string>
+    <string name="b_4_2">B.4.2 工作能力</string>
+    <string name="b_4_3">B.4.3 时间/空间定向</string>
+    <string name="b_4_4">B.4.4 人物定向</string>
+    <string name="b_4_5">B.4.5 社会交往能力</string>
+    <string name="b_4_score">B.4 总分</string>
+    <string name="b_4_level">B.4 等级</string>
+
+    <string name="evaluation_report">评估报告</string>
+
+    <string name="e_report_code">报告编号</string>
+    <string name="e_evalue_code">评估编号</string>
+    <string name="e_name">被评估人姓名</string>
+    <string name="e_location">评估地点</string>
+    <string name="e_time">评估时间</string>
+    <string name="e_type">评估类别</string>
+    <string name="e_count">评估次数</string>
+    <string name="e_environment">评估环境</string>
+    <string name="e_light">光线</string>
+    <string name="e_air">空气</string>
+    <string name="e_temperature">温度</string>
+    <string name="b_1_grade">日常生活活动等级</string>
+    <string name="b_2_grade">精神状态等级</string>
+    <string name="b_3_grade">感知觉与沟通等级</string>
+    <string name="b_4_grade">社会参与等级</string>
+    <string name="e_grade_pre">老年人能力初步等级</string>
+    <string name="grade_change_item">等级变更条款</string>
+    <string name="e_grade_final">老年人能力最终等级</string>
+    <string name="e_factor">评估依据</string>
+    <string name="e_tools">主要评估工具</string>
+    <string name="e_result">评估结果</string>
+    <string name="e_organization">评估机构</string>
+    <string name="e_issue_date">签发日期</string>
+    <string name="e_approver">批准</string>
+    <string name="e_checker">审核</string>
+
+    <string name="e_evaluator">评估员</string>
+    <string name="e_remark">备注</string>
+    <string name="state">数据状态</string>
+
+</resources>

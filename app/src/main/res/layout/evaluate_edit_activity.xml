@@ -26,6 +26,16 @@
         android:onClick="back"
         android:src="@drawable/icon_back" />
 
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        android:clickable="true"
+        android:onClick="save"
+        android:src="@drawable/icon_ok" />
+
     <com.elder.abilityevaluate.view.CustomViewPaper
         android:id="@+id/id_pager"
         android:layout_width="match_parent"

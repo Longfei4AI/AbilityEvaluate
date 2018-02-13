@@ -45,6 +45,13 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".activity.BaseInformationAddActivity"
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:theme="@style/activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".activity.BaseInformationEditActivity"
             android:launchMode="singleInstance"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"

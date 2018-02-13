@@ -3,32 +3,41 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_login" >
 
-    <TextView
-        android:id="@+id/tv_ad1"
-        style="@style/Custom.Font.Title.H1"
+    <TableRow
+        android:id="@+id/tv_ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tv_ad2"
-        android:alpha="0"
-        android:text="@string/prolusion_1" />
-    <TextView
-        android:id="@+id/tv_ad2"
-        style="@style/Custom.Font.Title.H1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="300dp"
-        android:alpha="0"
-        android:text="@string/prolusion_2" />
+        android:gravity="center_vertical" >
+        <TextView
+            android:id="@+id/tv_ad1"
+            style="@style/Custom.Font.Title.H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:paddingLeft="30dp"
+            android:text="@string/prolusion_1" />
+        <TextView
+            android:id="@+id/tv_ad2"
+            style="@style/Custom.Font.Title.H1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            android:paddingRight="30dp"
+            android:text="@string/prolusion_2" />
+    </TableRow>
+
 
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/tv_ad1"
+        android:layout_above="@+id/tv_ad"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="120dp"
         android:gravity="center_vertical" >
 
         <TextView

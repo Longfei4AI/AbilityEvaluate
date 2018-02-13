@@ -1,0 +1,188 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tr_button"
+        android:layout_below="@+id/header" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_1" />
+                <TextView
+                    android:id="@+id/b_4_1_tv"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine">
+                </TextView>
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_2" />
+                <TextView
+                    android:id="@+id/b_4_2_tv"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine">
+                </TextView>
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_3" />
+                <TextView
+                    android:id="@+id/b_4_3_tv"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine">
+                </TextView>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_4" />
+                <TextView
+                    android:id="@+id/b_4_4_tv"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine">
+                </TextView>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_5" />
+                <TextView
+                    android:id="@+id/b_4_5_tv"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine">
+                </TextView>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_score" />
+                <TextView
+                    android:id="@+id/b_4_score_TV"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="" />
+
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_level" />
+                <TextView
+                    android:id="@+id/b_4_level_tv"
+                    style="@style/Custom.Font.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine">
+                </TextView>
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

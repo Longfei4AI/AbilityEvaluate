@@ -1,0 +1,351 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/sv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tr_button"
+        android:layout_below="@+id/header" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_1" />
+                <RadioGroup
+                    android:id="@+id/b_4_1_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/b_4_1_0_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_1_0" />
+                    <RadioButton
+                        android:id="@+id/b_4_1_1_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_1_1" />
+                    <RadioButton
+                        android:id="@+id/b_4_1_2_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_1_2" />
+                    <RadioButton
+                        android:id="@+id/b_4_1_3_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_1_3" />
+                    <RadioButton
+                        android:id="@+id/b_4_1_4_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_1_4" />
+                </RadioGroup>
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_2" />
+                <RadioGroup
+                    android:id="@+id/b_4_2_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/b_4_2_0_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_2_0" />
+                    <RadioButton
+                        android:id="@+id/b_4_2_1_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_2_1" />
+                    <RadioButton
+                        android:id="@+id/b_4_2_2_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_2_2" />
+                    <RadioButton
+                        android:id="@+id/b_4_2_3_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_2_3" />
+                    <RadioButton
+                        android:id="@+id/b_4_2_4_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_2_4" />
+                </RadioGroup>
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_3" />
+                <RadioGroup
+                    android:id="@+id/b_4_3_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/b_4_3_0_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_3_0" />
+                    <RadioButton
+                        android:id="@+id/b_4_3_1_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_3_1" />
+                    <RadioButton
+                        android:id="@+id/b_4_3_2_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_3_2" />
+                    <RadioButton
+                        android:id="@+id/b_4_3_3_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_3_3" />
+                    <RadioButton
+                        android:id="@+id/b_4_3_4_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_3_4" />
+                </RadioGroup>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_4" />
+                <RadioGroup
+                    android:id="@+id/b_4_4_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/b_4_4_0_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_4_0" />
+                    <RadioButton
+                        android:id="@+id/b_4_4_1_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_4_1" />
+                    <RadioButton
+                        android:id="@+id/b_4_4_2_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_4_2" />
+                    <RadioButton
+                        android:id="@+id/b_4_4_3_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_4_3" />
+                    <RadioButton
+                        android:id="@+id/b_4_4_4_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_4_4" />
+                </RadioGroup>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_5" />
+                <RadioGroup
+                    android:id="@+id/b_4_5_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/b_4_5_0_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_5_0" />
+                    <RadioButton
+                        android:id="@+id/b_4_5_1_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_5_1" />
+                    <RadioButton
+                        android:id="@+id/b_4_5_2_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_5_2" />
+                    <RadioButton
+                        android:id="@+id/b_4_5_3_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_5_3" />
+                    <RadioButton
+                        android:id="@+id/b_4_5_4_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:text="@string/b_4_5_4" />
+                </RadioGroup>
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_score" />
+                <TextView
+                    android:id="@+id/b_4_score_TV"
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="" />
+
+            </TableRow>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line_table" >
+            </LinearLayout>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp" >
+
+                <TextView
+                    style="@style/Custom.Font.Context.Inverse"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/b_4_level" />
+                <RadioGroup
+                    android:id="@+id/b_4_level_RG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    >
+                    <RadioButton
+                        android:id="@+id/b_4_level_0_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:clickable="false"
+                        android:text="@string/b_4_level_0" />
+                    <RadioButton
+                        android:id="@+id/b_4_level_1_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:clickable="false"
+                        android:text="@string/b_4_level_1" />
+                    <RadioButton
+                        android:id="@+id/b_4_level_2_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:clickable="false"
+                        android:text="@string/b_4_level_2" />
+                    <RadioButton
+                        android:id="@+id/b_4_level_3_RB"
+                        style="@style/Custom.Font.Radio"
+                        android:button="@drawable/radio"
+                        android:clickable="false"
+                        android:text="@string/b_4_level_3" />
+                </RadioGroup>
+
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:background="@color/head_color"
             android:gravity="center"
-            android:text="@string/base_information"
+            android:text="@string/detail_base_information"
             android:textSize="40sp" />
 
         <ImageView
@@ -75,25 +75,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_1_1" />
 
-                        <EditText
-                            android:id="@+id/a_1_1_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_1_1_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:inputType="textNoSuggestions"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -105,25 +106,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_1_2" />
 
-                        <EditText
-                            android:id="@+id/a_1_2_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_1_2_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -137,25 +139,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_1_3" />
 
-                        <EditText
-                            android:id="@+id/a_1_3_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_1_3_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                 </LinearLayout>
@@ -192,25 +195,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_1" />
 
-                        <EditText
-                            android:id="@+id/a_2_1_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_1_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -223,25 +227,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_2" />
 
-                        <EditText
-                            android:id="@+id/a_2_2_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_2_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -254,25 +259,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_3" />
 
-                        <EditText
-                            android:id="@+id/a_2_3_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_3_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -285,25 +291,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_4" />
 
-                        <EditText
-                            android:id="@+id/a_2_4_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_4_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -316,25 +323,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_5" />
 
-                        <EditText
-                            android:id="@+id/a_2_5_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_5_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -347,25 +355,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_6" />
 
-                        <EditText
-                            android:id="@+id/a_2_6_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_6_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -378,25 +387,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_7" />
 
-                        <EditText
-                            android:id="@+id/a_2_7_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_7_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -409,25 +419,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_8" />
 
-                        <EditText
-                            android:id="@+id/a_2_8_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_8_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -440,25 +451,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_9" />
 
-                        <EditText
-                            android:id="@+id/a_2_9_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_9_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -471,25 +483,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_10" />
 
-                        <EditText
-                            android:id="@+id/a_2_10_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_10_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -502,25 +515,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_11" />
 
-                        <EditText
-                            android:id="@+id/a_2_11_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_11_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -533,25 +547,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_12" />
 
-                        <EditText
-                            android:id="@+id/a_2_12_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_12_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -564,25 +579,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:text="@string/a_2_13" />
+                            android:text="@string/a_2_13_1" />
 
-                        <EditText
-                            android:id="@+id/a_2_13_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_13_1_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -595,25 +611,215 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:text="@string/a_2_14" />
+                            android:text="@string/a_2_13_2" />
 
-                        <EditText
-                            android:id="@+id/a_2_14_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_2_13_2_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_13_3" />
+
+                        <TextView
+                            android:id="@+id/a_2_13_3_tv"
+                            style="@style/Custom.Font.TextView"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </TextView>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_14_1" />
+
+                        <TextView
+                            android:id="@+id/a_2_14_1_tv"
+                            style="@style/Custom.Font.TextView"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </TextView>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_14_2" />
+
+                        <TextView
+                            android:id="@+id/a_2_14_2_tv"
+                            style="@style/Custom.Font.TextView"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </TextView>
+                    </TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_14_3" />
+
+                        <TextView
+                            android:id="@+id/a_2_14_3_tv"
+                            style="@style/Custom.Font.TextView"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </TextView>
+                    </TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_14_4" />
+
+                        <TextView
+                            android:id="@+id/a_2_14_4_tv"
+                            style="@style/Custom.Font.TextView"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </TextView>
+                    </TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@color/line_table" >
+                    </LinearLayout>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingLeft="20dp" >
+
+                        <TextView
+                            style="@style/Custom.Font.Context.Inverse"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="@string/a_2_14_5" />
+
+                        <TextView
+                            android:id="@+id/a_2_14_5_tv"
+                            style="@style/Custom.Font.TextView"
+                            android:layout_width="0dp"
+                            android:layout_height="60dp"
+                            android:layout_weight="1"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textSize="25sp" >
+                        </TextView>
                     </TableRow>
 
                 </LinearLayout>
@@ -650,25 +856,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_3_1" />
 
-                        <EditText
-                            android:id="@+id/a_3_1_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_3_1_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -681,25 +888,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_3_2" />
 
-                        <EditText
-                            android:id="@+id/a_3_2_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_3_2_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -712,25 +920,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_3_3" />
 
-                        <EditText
-                            android:id="@+id/a_3_3_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_3_3_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -743,25 +952,26 @@
                     <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:paddingLeft="20dp" >
 
                         <TextView
                             style="@style/Custom.Font.Context.Inverse"
-                            android:layout_width="150dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
                             android:layout_height="match_parent"
                             android:text="@string/a_3_4" />
 
-                        <EditText
-                            android:id="@+id/a_3_4_et"
-                            style="@style/Custom.EditText"
+                        <TextView
+                            android:id="@+id/a_3_4_tv"
+                            style="@style/Custom.Font.TextView"
                             android:layout_width="0dp"
                             android:layout_height="60dp"
                             android:layout_weight="1"
                             android:maxLength="30"
                             android:maxLines="1"
                             android:textSize="25sp" >
-                        </EditText>
+                        </TextView>
                     </TableRow>
 
                     <LinearLayout
@@ -785,20 +995,21 @@
         android:gravity="center" >
 
         <Button
-            style="@style/Custom.Button.White"
+            style="@style/Custom.Button.Green"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="70dp"
             android:onClick="edit"
             android:text="@string/edit" />
+
         <Button
             style="@style/Custom.Button.Blue"
-            android:layout_marginLeft="0dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="70dp"
             android:onClick="evaluate"
             android:text="@string/ability_evaluate" />
+
     </TableRow>
 
 </RelativeLayout>

@@ -20,7 +20,7 @@
             android:layout_centerHorizontal="true"
             android:background="@color/head_color"
             android:gravity="center"
-            android:text="@string/edit_base_information"
+            android:text="@string/add_base_information"
             android:textSize="40sp" />
 
         <ImageView
@@ -677,7 +677,6 @@
                             android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:text="@string/a_2_11" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -757,6 +756,7 @@
                             </TableRow>
 
                         </LinearLayout>
+
                     </TableRow>
 
                     <LinearLayout

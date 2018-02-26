@@ -24,9 +24,9 @@
     <color name="text_button_color">#FFFFFFFF</color>
     <color name="text_button_color_inverse">#FFFFFFFF</color>
 
-    <!-- 标签颜色 -->
-    <color name="tab_unselect">#FF989898</color>
-    <color name="tab_select">#FF6bc4ec</color>
+    <!-- fragment底端标签颜色 -->
+    <color name="tab_unselect">#FF6bc4ec</color>
+    <color name="tab_select">#FF07b3fb</color>
 
     <!-- 表格颜色 -->
     <color name="bg_table_header">#FFc0ebfc</color>

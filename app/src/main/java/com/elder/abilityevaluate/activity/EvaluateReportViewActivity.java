@@ -26,7 +26,7 @@ public class EvaluateReportViewActivity extends BasicActiviy{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.evaluate_activity);
+		setContentView(R.layout.evaluation_edit_activity);
 	}
 
 	@Override

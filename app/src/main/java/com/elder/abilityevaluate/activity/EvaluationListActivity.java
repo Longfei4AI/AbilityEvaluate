@@ -28,13 +28,14 @@ import com.lidroid.xutils.db.sqlite.Selector;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import de.greenrobot.event.EventBus;
 
 public class EvaluationListActivity extends BasicActiviy {
     public static final int DIALOG_LOGOUT = 0x01;
     public static final int DIALOG_EXIT = 0x02;
-    public final static int EVENT_DOWNLOAD = 0x0A;
+    public final static int EVENT_NODATA = 0x0A;
     // 基本信息
     private static final String MODEL_BASE_INFORMATION = "base_information";
     // 能力评估
@@ -48,24 +49,25 @@ public class EvaluationListActivity extends BasicActiviy {
     private CustomLoadingDialog loadingDialog;
     private CustomDialog confirmDialog;
     private CustomDialog alertDialog;
-    private UserInfoDialog userInfoDialog;
     private String corpCode = "";
     private ListView listview = null;
     private SharedPreferences spf;
     private int dialogType = 0;
     private SimpleAdapter saMenuItem = null;
+    private TextView noneDataTv = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         showInitedLoading = false;
-        setContentView(R.layout.base_information_list_activity);
+        setContentView(R.layout.evaluation_list_activity);
         EventBus.getDefault().register(this);
     }
 
     @Override
     public void init() {
-        listview = (ListView) findViewById(R.id.menu_list);
+        noneDataTv = findViewById(R.id.noneDataTv);
+        listview = findViewById(R.id.menu_list);
         spf = getSharedPreferences(
                 GlobalSetting.PREFERENCE_NAME, Context.MODE_PRIVATE);
         corpCode = spf.getString(PreferenceParams.CORP_CODE, "");
@@ -73,9 +75,9 @@ public class EvaluationListActivity extends BasicActiviy {
         initializeData(dataList);
         saMenuItem = new SimpleAdapter(this,
                 dataList, // 数据源
-                R.layout.base_information_list_item, // xml实现
-                new String[] {  "ItemText", "ItemId", "ItemContent", "ItemState" }, // 对应map的Key
-                new int[] { R.id.ItemText, R.id.ItemId,R.id.ItemContent, R.id.ItemState }); // 对应R的Id
+                R.layout.evaluation_list_item, // xml实现
+                new String[] { "index", "id", "name", "sex", "code", "date", "state" }, // 对应map的Key
+                new int[] { R.id.base_index, R.id.base_id, R.id.base_name, R.id.base_sex, R.id.base_code, R.id.base_date, R.id.base_state }); // 对应R的Id
     }
 
     @Override
@@ -85,23 +87,21 @@ public class EvaluationListActivity extends BasicActiviy {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                                     long arg3) {
-                TextView tv = (TextView) arg1.findViewById(R.id.ItemId);
+                TextView id_tv = arg1.findViewById(R.id.base_id);
+                TextView state_tv = arg1.findViewById(R.id.base_state);
                 Bundle bundle = new Bundle();
-                bundle.putString("id",tv.getText().toString());
-                GoActivityWithOutFinishing(BaseInformationViewActivity.class,bundle);
+                bundle.putString("id",id_tv.getText().toString());
+                bundle.putString("activity", "evaluate");
+                if(state_tv.getText().toString().equals(getString(R.string.not_evaluate))){
+                    GoActivityWithFinishing(EvaluationEditActivity.class,bundle);
+                }else{
+                    GoActivityWithFinishing(EvaluationViewActivity.class,bundle);
+                }
+
             }
         });
 
         loadingDialog = new CustomLoadingDialog(this);
-        userInfoDialog = new UserInfoDialog(this,new UserInfoDialog.CallBack() {
-            @Override
-            public void logOut() {
-                dialogType = DIALOG_LOGOUT;
-                confirmDialog.setType(CustomDialog.TYPE_QUESTION);
-                confirmDialog.setMessage("确定注销当前登录状态？");
-                confirmDialog.show();
-            }
-        });
         CustomDialog.Builder builder = new CustomDialog.Builder(this);
         builder.setTitle("提示")
                 .setPositiveButton(R.string.sure,
@@ -134,36 +134,35 @@ public class EvaluationListActivity extends BasicActiviy {
         List<BaseInformation> baseInforList = DataBaseHelper.getInstance(this,BaseInformation.class)
                 .getListBySelector(Selector.from(BaseInformation.class));
         HashMap<String, Object> baseInfo = null;
+        int index = 0;
         if(baseInforList != null && baseInforList.size() > 0){
             for (BaseInformation base : baseInforList){
+                String sex = base.getA_2_2() == null ? "" : base.getA_2_2() ;
+                if(sex.equals("1")){
+                    sex = getString(R.string.a_2_2_1);
+                }else if (sex.equals("2")){
+                    sex = getString(R.string.a_2_2_2);
+                }
                 baseInfo = new HashMap<String, Object>();
-                baseInfo.put("ItemText", base.getA_2_1()); //老人姓名
-                baseInfo.put("ItemId", base.getBaseInfoId());
-                baseInfo.put("ItemContent", base.getA_2_4());//身份证号
-                baseInfo.put("ItemState", base.getState().equals(BaseInformation.EVALUATED)
+                baseInfo.put("index", ++index+".");
+                baseInfo.put("id", base.getBaseInfoId());
+                baseInfo.put("name", base.getA_2_1()); //老人姓名
+                baseInfo.put("sex", sex); //老人性别
+                baseInfo.put("code", base.getA_1_1());//评估编号
+                baseInfo.put("date", base.getA_1_2());//评估日期
+                baseInfo.put("state", base.getState().equals(BaseInformation.EVALUATED)
                         ? getString(R.string.evaluated) : getString(R.string.not_evaluate));//评估状态
                 list.add(baseInfo);
             }
         }else{
-            baseInfo = new HashMap<String, Object>();
-            baseInfo.put("ItemText", "暂无数据");
-            baseInfo.put("ItemId", "");
-            baseInfo.put("ItemContent", "");
-            baseInfo.put("ItemImage", R.drawable.icon_go);
-            baseInfo.put("ItemState", getString(R.string.not_evaluate));//评估状态
-            list.add(baseInfo);
+            Map<String, Object> result = new HashMap<String, Object>();
+            Event.MsgEvent event = new Event.MsgEvent(EVENT_NODATA, result);
+            event.fromClass = EvaluationListActivity.class;
+            result.put("result", "nodata");
+            EventBus.getDefault().post(event);
         }
     }
 
-    /**
-     * @Title: logOut
-     * @Description: 注销
-     * @return void    返回类型
-     * @throws
-     */
-    public void logOut(View v){
-        userInfoDialog.show();
-    }
     public void back(View v) {
         GoActivityWithFinishing(MainListActivity.class, null);
     }
@@ -196,15 +195,6 @@ public class EvaluationListActivity extends BasicActiviy {
                 } else {
                 }
                 break;
-            case DIALOG_LOGOUT:
-                if (flag) {
-                    userInfoDialog.dismiss();
-                    Intent stateService = new Intent(this,
-                            LogService.class);
-                    this.stopService(stateService);
-                    GoActivityWithFinishing(LoginActivity.class, null);
-                }
-                break;
             default:
                 break;
         }
@@ -213,25 +203,18 @@ public class EvaluationListActivity extends BasicActiviy {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            dialogType = DIALOG_EXIT;
-            confirmDialog.setType(CustomDialog.TYPE_QUESTION);
-            confirmDialog.setMessage("确定退出本系统吗？");
-            confirmDialog.show();
+            back(null);
             return true;
         }
         return super.onKeyDown(keyCode, event);
     }
 
     public void onEventMainThread(Event.MsgEvent msgEvent) {
-        if (msgEvent.type == EVENT_DOWNLOAD
-                && msgEvent.fromClass == MainMenuActivity.class) {
+        if (msgEvent.type == EVENT_NODATA
+                && msgEvent.fromClass == EvaluationListActivity.class) {
             String result = (String)msgEvent.values.get("result");
-            String data = (String)msgEvent.values.get("data");
-            if (result.equals("-1")) {
-                loadingDialog.hideLoading();
-                alertDialog.setType(CustomDialog.TYPE_ERROR);
-                alertDialog.setMessage("连接服务器异常，上报失败！");
-                alertDialog.show();
+            if (result.equals("nodata")) {
+                noneDataTv.setVisibility(View.VISIBLE);
             }
         }
     }

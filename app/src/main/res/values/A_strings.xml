@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a_1_3_1">1.初评</string>
+    <string name="a_1_3_2">2.接受服务后的常规评估</string>
+    <string name="a_1_3_3">3.状况发生变化后的即时评估</string>
+    <string name="a_1_3_4">4.因评估结果有疑问进行的复评</string>
+
+    <string name="a_2_2_1">男</string>
+    <string name="a_2_2_2">女</string>
+
+    <string name="a_2_6_1.">汉族</string>
+    <string name="a_2_6_2.">少数民族</string>
+    <string name="a_2_7_1">文盲及半文盲</string>
+    <string name="a_2_7_2">小学</string>
+    <string name="a_2_7_3">初中</string>
+    <string name="a_2_7_4">高中/技校/中专</string>
+    <string name="a_2_7_5">大学专科及以上</string>
+    <string name="a_2_7_6">不详</string>
+    <string name="a_2_8_1.">无</string>
+    <string name="a_2_8_2">有</string>
+    <string name="a_2_9_1">未婚 </string>
+    <string name="a_2_9_2">已婚 </string>
+    <string name="a_2_9_3">丧偶 </string>
+    <string name="a_2_9_4">离婚 </string>
+    <string name="a_2_9_5">未说明婚姻状况</string>
+    <string name="a_2_10_1">独居 </string>
+    <string name="a_2_10_2">与配偶/伴侣居住</string>
+    <string name="a_2_10_3">与子女居住 </string>
+    <string name="a_2_10_4">与父母居住</string>
+    <string name="a_2_10_5">与兄弟姐妹居住 </string>
+    <string name="a_2_10_6">与其他亲属居住 </string>
+    <string name="a_2_10_7">与非亲属关系的人居住 </string>
+    <string name="a_2_10_8">养老机构</string>
+
+    <string name="a_2_11_1.">城镇职工基本医疗保险 </string>
+    <string name="a_2_11_2">城镇居民基本医疗保险 </string>
+    <string name="a_2_11_3">新型农村合作医疗 </string>
+    <string name="a_2_11_4">贫困救助 </string>
+    <string name="a_2_11_5">商业医疗保险 </string>
+    <string name="a_2_11_6">全公费</string>
+    <string name="a_2_11_7">全自费 </string>
+    <string name="a_2_11_8">其他 </string>
+    <string name="a_2_12_1">退休金/养老金</string>
+    <string name="a_2_12_2">子女补贴 </string>
+    <string name="a_2_12_3">亲友资助 </string>
+    <string name="a_2_12_4">其他补贴</string>
+
+    <string name="a_2_13_1_1">无 </string>
+    <string name="a_2_13_1_2">轻度 </string>
+    <string name="a_2_13_1_3">中度 </string>
+    <string name="a_2_13_1_4">重度</string>
+
+    <string name="a_2_13_2_1">无 </string>
+    <string name="a_2_13_2_2">精神分裂症 </string>
+    <string name="a_2_13_2_3">双相情感障碍 </string>
+    <string name="a_2_13_2_4">偏执性情感障碍</string>
+    <string name="a_2_13_2_5">分裂情感性障碍 </string>
+    <string name="a_2_13_2_6">癫痫所致精神障碍 </string>
+    <string name="a_2_13_2_7">精神发育迟滞伴发精神障碍</string>
+
+    <string name="a_2_14_1_1">无 </string>
+    <string name="a_2_14_1_2">发生过一次 </string>
+    <string name="a_2_14_1_3">发生过两次 </string>
+    <string name="a_2_14_1_4">发生过三次及以上</string>
+
+    <string name="a_3_2_1">1.配偶</string>
+    <string name="a_3_2_2">2.子女</string>
+    <string name="a_3_2_3">3.其他亲属</string>
+    <string name="a_3_2_4">4.雇佣劳动者</string>
+    <string name="a_3_2_5">5.其他</string>
+
+</resources>

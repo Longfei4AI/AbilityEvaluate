@@ -32,7 +32,10 @@
     <style name="Custom.Font.Context.Error">
         <item name="android:textColor">@color/text_color_error</item>    
     </style>
-    
+    <style name="Custom.Font.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/tab_select</item>
+    </style>
     <style name="Custom.Font.EditText">
         <item name="android:textColor">@color/text_color_inverse</item>
     </style> 
@@ -48,5 +51,10 @@
         <item name="android:textSize">30sp</item>  
         <item name="android:textColor">@color/head_color</item>
     </style>
-    
+    <style name="Custom.Font.Radio">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_color_inverse</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
 </resources>

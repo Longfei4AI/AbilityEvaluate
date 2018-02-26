@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="report_level_0">0能力完好</string>
+    <string name="report_level_1">1轻度失能</string>
+    <string name="report_level_2">2中度失能</string>
+    <string name="report_level_3">3重度失能</string>
+
+    <string name="level_0">能力完好</string>
+    <string name="level_1">轻度受损</string>
+    <string name="level_2">中度受损</string>
+    <string name="level_3">重度受损</string>
+
+    <string name="grade_0">能力完好</string>
+    <string name="grade_1">轻度失能</string>
+    <string name="grade_2">中度失能</string>
+    <string name="grade_3">重度失能</string>
+
+    <string name="level_change_1">1 有认知症/痴呆、精神疾病者，在原有能力级别上提高一个等级</string>
+    <string name="level_change_2">2 近30天发生过2次及以上跌倒、噎食、自杀、走失者，在原有能力级别上提高一个等级</string>
+    <string name="level_change_3">3 处于昏迷状态者，直接评定为重度失能</string>
+
+    <string name="item_change_1">有认知症/痴呆、精神疾病</string>
+    <string name="item_change_2">近30天发生过2次及以上跌倒、噎食、自杀、走失</string>
+    <string name="item_change_3">处于昏迷状态</string>
+
+</resources>

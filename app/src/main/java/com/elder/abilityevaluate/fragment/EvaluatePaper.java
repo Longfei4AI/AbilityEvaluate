@@ -34,7 +34,7 @@ public class EvaluatePaper extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_viewpaper, null);
-		TextView tip = (TextView) view.findViewById(R.id.content);
+		TextView tip = view.findViewById(R.id.content);
 		tip.setText(TITLE[newsType]);
 		return view;
 	}

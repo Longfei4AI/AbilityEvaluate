@@ -163,15 +163,15 @@ public class MainListActivity extends BasicActiviy {
      */
     private void functionClick(String modelFlag) {
         if (modelFlag.equals(MODEL_BASE_INFORMATION)) {// 基本信息
-            GoActivityWithOutFinishing(BaseInformationListActivity.class,null);
+            GoActivityWithFinishing(BaseInformationListActivity.class,null);
         } else if (modelFlag.equals(MODEL_ABILITY_EVALUATE)) {// 能力评估
-            GoActivityWithOutFinishing(EvaluationListActivity.class,null);
+            GoActivityWithFinishing(EvaluationListActivity.class,null);
         } else if (modelFlag.equals(MODEL_REPORT_EVALUATE)) {// 评估报告
-            GoActivityWithOutFinishing(EvaluateReportListActivity.class,null);
+            GoActivityWithFinishing(EvaluateReportListActivity.class,null);
         }else if (modelFlag.equals(MODEL_SETTING)) {// 参数设置
-            GoActivityWithOutFinishing(SettingActivity.class,null);
+            GoActivityWithFinishing(SettingActivity.class,null);
         }else if (modelFlag.equals(MODEL_UPLOAD)) {// 数据上报
-            GoActivityWithOutFinishing(DownloadActivity.class,null);
+            //GoActivityWithFinishing(DownloadActivity.class,null);
             if(!GlobalInfo.isInternetAvailable(this)){
                 alertDialog.setMessage("网络连接异常，不能进行数据上报！");
                 alertDialog.show();

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="b_1_1_10">10分，可独立进食（在合理的时间内独立进食准备好的食物）</string>
+    <string name="b_1_1_5">5分，需要部分帮助（进食过程中需要一定的帮助，如协助把持餐具）</string>
+    <string name="b_1_1_0">0分，需极大帮助或完全依赖他人，或有留置胃管</string>
+
+    <string name="b_1_2_5">5分，准备好洗澡水后，可自己独立完成洗澡过程</string>
+    <string name="b_1_2_0">0分，在洗澡过程中需他人帮助</string>
+
+    <string name="b_1_3_5">5分，可自己独立完成</string>
+    <string name="b_1_3_0">0分，需他人帮助</string>
+
+    <string name="b_1_4_10">10分，可独立完成</string>
+    <string name="b_1_4_5">5分，需要部分帮助（能自己穿脱，但需他人帮助整理衣物、系扣/鞋带、拉拉链）</string>
+    <string name="b_1_4_0">0分，需极大帮助或完全依赖他人</string>
+
+    <string name="b_1_5_10">10分，可控制大便</string>
+    <string name="b_1_5_5">5分，偶尔失控（每周小于1次），或需要他人提示</string>
+    <string name="b_1_5_0">0分，完全失控</string>
+
+    <string name="b_1_6_10">10分，可控制小便</string>
+    <string name="b_1_6_5">5分，偶尔失控（每天小于1次，但每周大于1次），或需要他人提示</string>
+    <string name="b_1_6_0">0分，完全失控，或留置导尿管</string>
+
+    <string name="b_1_7_10">10分，可独立完成</string>
+    <string name="b_1_7_5">5分，需部分帮助（需他人搀扶去厕所、需他人帮忙冲水或整理衣裤等）</string>
+    <string name="b_1_7_0">0分，需极大帮助或完全依赖他人</string>
+
+    <string name="b_1_8_15">15分，可独立完成</string>
+    <string name="b_1_8_10">10分，需部分帮助（需他人搀扶或使用拐杖）</string>
+    <string name="b_1_8_5">5分，需极大帮助（较大程度上依赖他人搀扶和帮助）</string>
+    <string name="b_1_8_0">0分，完全依赖他人</string>
+
+    <string name="b_1_9_15">15分，可独立在平地上行走45m</string>
+    <string name="b_1_9_10">10分，需部分帮助（因肢体残疾、平衡能力差、过度虚弱、视力等问题，在一定程度上需他人搀扶或使用拐杖、助行器等辅助工具）</string>
+    <string name="b_1_9_5">5分，需极大帮助（因肢体残疾、平衡能力差、过度虚弱、视力等问题，在较大程度上依赖他人搀扶，或坐在轮椅上自行移动）</string>
+    <string name="b_1_9_0">0分，完全依赖他人</string>
+
+    <string name="b_1_10_10">10分，可独立上下楼梯（连续上下10-15个台阶）</string>
+    <string name="b_1_10_5">5分，需部分帮助（需扶着楼梯、他人搀扶，或使用拐杖等）</string>
+    <string name="b_1_10_0">0分，需极大帮助或完全依赖他人</string>
+
+    <string name="b_1_level_0">	0能力完好：总分100分</string>
+    <string name="b_1_level_1">	1轻度受损：总分61-99分</string>
+    <string name="b_1_level_2">	2中度受损：总分41-60分</string>
+    <string name="b_1_level_3"> 3重度受损：总分≤40分 </string>
+
+    <string name="b_2_1_0">0分，画钟正确（画出一个闭锁圆，指针位置正确），且能回忆出2-3个词</string>
+    <string name="b_2_1_1">1分，画钟错误（画的圆不闭锁，或指针位置不正确），或只回忆出0-1个词</string>
+    <string name="b_2_1_2">2分，已确诊为认知障碍，如老年痴呆</string>
+
+    <string name="b_2_2_0">0分，无身体攻击行为（如打/踢/推/咬/抓/摔东西）和语言攻击行为（如骂人、语言威胁、尖叫）</string>
+    <string name="b_2_2_1">1分，每月有几次身体攻击行为，或每周有几次语言攻击行为</string>
+    <string name="b_2_2_2">2分，每周有几次身体攻击行为，或每日有语言攻击行为</string>
+
+    <string name="b_2_3_0">0分，无</string>
+    <string name="b_2_3_1">1分，情绪低落、不爱说话、不爱梳洗、不爱活动</string>
+    <string name="b_2_3_2">2分，有自杀念头或自杀行为</string>
+
+    <string name="b_2_level_0">0能力完好：总分0分</string>
+    <string name="b_2_level_1">1轻度受损：总分1分</string>
+    <string name="b_2_level_2">2中度受损：总分2-3分</string>
+    <string name="b_2_level_3">3重度受损：总分4-6分</string>
+
+    <string name="b_3_1_0">0分，神志清醒，对周围环境警觉</string>
+    <string name="b_3_1_1">1分，嗜睡，表现为睡眠状态过度延长。当呼唤或推动患者的肢体时可唤醒，并能进行正确的交谈或执行指令，停止刺激后又继续入睡</string>
+    <string name="b_3_1_2">2分，昏睡，一般的外接刺激不能使其觉醒，给予较强烈的刺激时可有短时的意识清醒，醒后可简短回答提问，当刺激减弱后又很快进入睡眠状态</string>
+    <string name="b_3_1_3">3分，昏迷，处于浅昏迷时对疼痛刺激有回避和痛苦表情；处于深昏时对刺激无反应（若评定为昏迷，直接评定为重度失能，可不进行一下项目的评估）</string>
+
+    <string name="b_3_2_0">0分，能看清书报上的标准字体</string>
+    <string name="b_3_2_1">1分，能看清大字体，但看不清书报上的标准字体</string>
+    <string name="b_3_2_2">2分，视力有限，看不清报纸大标题，但能辨认物体</string>
+    <string name="b_3_2_3">3分，辨认物体有困难，但眼睛能跟随物体移动，智能看到光、颜色和形状</string>
+    <string name="b_3_2_4">4分，没有视力，眼睛不能跟随物体移动</string>
+
+    <string name="b_3_3_0">0分，可正常交谈，能听到电视、电话、门铃的声音</string>
+    <string name="b_3_3_1">1分，在轻声说话或说话距离超过2米时听不清</string>
+    <string name="b_3_3_2">2分，正常交流有些困难，需在安静的环境或大声说话才能听到</string>
+    <string name="b_3_3_3">3分，讲话者大声说话或说话很慢，才能部分听见</string>
+    <string name="b_3_3_4">4分，完全听不见</string>
+
+    <string name="b_3_4_0">0分，无困难，能与他人正常沟通和交流</string>
+    <string name="b_3_4_1">1分，能够表达自己的需要及理解别人的话，但需要增加时间或给予帮助</string>
+    <string name="b_3_4_2">2分，表达需要或理解有困难，需频繁重复或简化口头表达</string>
+    <string name="b_3_4_3">3分，不能表达需要或理解他人的话</string>
+
+    <string name="b_3_level_0">0能力完好：意识清醒，且视力和听力评为0或1，沟通评为0</string>
+    <string name="b_3_level_1">1轻度受损：意识清醒，但视力或听力中至少一项评为2，或沟通评为1</string>
+    <string name="b_3_level_2">2中度受损：意识清醒，但视力或听力中至少一项评为3，或沟通评为2；或嗜睡，视力或听力评定为3及以下，沟通评定为2及以下</string>
+    <string name="b_3_level_3">3重度受损：意识清醒或嗜睡，但视力或听力中至少一项评为4，或沟通评为3；或昏睡/昏迷 </string>
+
+    <string name="b_4_1_0">0分，除个人生活自理外（如饮食、洗漱、穿戴、二便），能料理家务（如做饭、洗衣）或当家管理实务</string>
+    <string name="b_4_1_1">1分，除个人生活自理外，能做家务，但欠好，家庭事务安排欠条理</string>
+    <string name="b_4_1_2">2分，个人生活能自理；只有在他人帮助下才能做家务，但质量不好</string>
+    <string name="b_4_1_3">3分，个人基本生活事务能自理（如饮食、二便），在督促下可洗漱</string>
+    <string name="b_4_1_4">4分，个人基本生活事务（如饮食、二便）需要部分帮助或完全依赖他人</string>
+
+    <string name="b_4_2_0">0分，原来熟练的脑力工作或体力技巧性工作可照常进行</string>
+    <string name="b_4_2_1">1分，原来熟练的脑力工作或体力技巧性工作能力有所下降</string>
+    <string name="b_4_2_2">2分，原来熟练的脑力工作或体力技巧性工作明显不如以往，部分遗忘</string>
+    <string name="b_4_2_3">3分，对熟练工作只有一些片段保留，技能全部遗忘</string>
+    <string name="b_4_2_4">4分，对以往的知识或技能全部磨灭</string>
+
+    <string name="b_4_3_0">0分，时间观念（年、月、日、时）清楚；可单独出远门，能很快掌握新环境的方位</string>
+    <string name="b_4_3_1">1分，时间观念有些下降，年、月、日清楚，但有时相差几天；可单独来往于近街，知道现住地的名称及方位，但不知回家路线</string>
+    <string name="b_4_3_2">2分，时间观念较差，年、月、日不清楚，可知上半年或下半年；只能单独在家附近行动，对现住地只知名称，不知道方位</string>
+    <string name="b_4_3_3">3分，时间观念很差，年、月、日不清楚，可知上午或下午；只能在左邻右舍间串门，对现住地不知名称和方位</string>
+    <string name="b_4_3_4">4分，无时间观念；不能单独外出</string>
+
+    <string name="b_4_4_0">0分，知道周围人们的关系，知道祖孙、叔伯、姑姨、侄子侄女等称谓的意义；可分辨陌生人的大致年龄和身份，可用适当称呼</string>
+    <string name="b_4_4_1">1分，只知道家中亲近亲密的关系，不会分辨陌生人的大致年龄，不能称呼陌生人</string>
+    <string name="b_4_4_2">2分，只能称呼家中人，或只能照样称呼，不知其关系，不辨辈分</string>
+    <string name="b_4_4_3">3分，只认识常同住的亲人，可称呼子女或孙子女，可辨认熟人和生人</string>
+    <string name="b_4_4_4">4分，只认识保护人，不辨熟人和生人</string>
+
+    <string name="b_4_5_0">0分，参与社会，在社会环境还有一定的适应能力，待人接物恰当</string>
+    <string name="b_4_5_1">1分，能适应单纯环境，主动接触人，初见面时难让人发现智力问题，不能理解隐喻语</string>
+    <string name="b_4_5_2">2分，脱离社会，可被动接触，不会主动待人，谈话中很多不适词句，容易上当受骗</string>
+    <string name="b_4_5_3">3分，勉强可与人交往，谈吐内容不清楚，表情不恰当</string>
+    <string name="b_4_5_4">4分，难以与人接触</string>
+
+    <string name="b_4_level_0">0能力完好：总分0-2分</string>
+    <string name="b_4_level_1">1轻度受损：总分3-7分</string>
+    <string name="b_4_level_2">2中度受损：总分8-13分</string>
+    <string name="b_4_level_3">3重度受损：总分14-20分</string>
+
+
+
+</resources>

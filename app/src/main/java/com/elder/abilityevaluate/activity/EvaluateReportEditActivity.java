@@ -3,58 +3,186 @@ package com.elder.abilityevaluate.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 
 import com.elder.abilityevaluate.R;
 import com.elder.abilityevaluate.basic.BasicActiviy;
+import com.elder.abilityevaluate.entity.BaseInformation;
+import com.elder.abilityevaluate.entity.EvaluationReport;
 import com.elder.abilityevaluate.fragment.B1;
-import com.elder.abilityevaluate.fragment.EvaluatePaper;
-import com.elder.abilityevaluate.view.CustomViewPaper;
-import com.elder.abilityevaluate.viewpagerindicator.TabPageIndicator;
+import com.elder.abilityevaluate.utils.DataBaseHelper;
+import com.elder.abilityevaluate.widget.CustomToast;
+import com.lidroid.xutils.db.sqlite.Selector;
 
 import java.util.List;
 
 public class EvaluateReportEditActivity extends BasicActiviy{
-	private TabPageIndicator mIndicator;
-	private CustomViewPaper mViewPager;
-	private FragmentPagerAdapter mAdapter;
-
+	private TextView report_1_1_tv;
+	private TextView report_1_2_tv;
+	private TextView report_1_3_tv;
+	private TextView report_1_4_tv;
+	private TextView report_2_1_tv;
+	private TextView report_3_1_tv;
+	private TextView report_3_2_tv;
+	private TextView report_3_3_tv;
+	private TableRow report_3_1_tr;
+	private TableRow report_3_2_tr;
+	private LinearLayout report_3_2_ll;
+	private TableRow report_3_3_tr;
+	private LinearLayout report_3_3_ll;
+	private TextView report_4_1_tv;
+	private String baseId = null;
+	private EvaluationReport report = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.evaluate_activity);
+		Intent intent = getIntent();
+		baseId = intent.getExtras().getString("id");
+		setContentView(R.layout.report_evaluation_edit_activity);
 	}
 
 	@Override
 	public void init() {
-		mViewPager = (CustomViewPaper) findViewById(R.id.id_pager);
-		mAdapter = new TabAdapter(getSupportFragmentManager());
-		mIndicator = (TabPageIndicator) findViewById(R.id.id_indicator);
+		report_1_1_tv = findViewById(R.id.report_1_1_tv);
+		report_1_2_tv = findViewById(R.id.report_1_2_tv);
+		report_1_3_tv = findViewById(R.id.report_1_3_tv);
+		report_1_4_tv = findViewById(R.id.report_1_4_tv);
+		report_2_1_tv = findViewById(R.id.report_2_1_tv);
+		report_3_1_tv = findViewById(R.id.report_3_1_tv);
+		report_3_2_tv = findViewById(R.id.report_3_2_tv);
+		report_3_3_tv = findViewById(R.id.report_3_3_tv);
+		report_3_1_tr = findViewById(R.id.report_3_1_tr);
+		report_3_2_tr = findViewById(R.id.report_3_2_tr);
+		report_3_2_ll = findViewById(R.id.report_3_2_ll);
+		report_3_3_tr = findViewById(R.id.report_3_3_tr);
+		report_3_3_ll = findViewById(R.id.report_3_3_ll);
+		report_4_1_tv = findViewById(R.id.report_4_1_tv);
+		this.initData();
+	}
+	/**
+	 * @Author: wlf
+	 * @Time: 2018/2/10 10:13
+	 * @Desc: 为TextView填充数据
+	 * @Params:
+	 * @Return: void
+	 */
+	private void initData() {
+		report = DataBaseHelper.getInstance(this, EvaluationReport.class).
+				findFirst(Selector.from(EvaluationReport.class).where("baseInfoId", "=", baseId));
+		if (null == report) {
+			CustomToast.show(this, "获取数据失败！", CustomToast.LENGTH_SHORT);
+			return;
+		}
+		switch (report.getB_1_grade()){
+			case 0:
+				report_1_1_tv.setText(getString(R.string.level_0));
+				break;
+			case 1:
+				report_1_1_tv.setText(getString(R.string.level_1));
+				break;
+			case 2:
+				report_1_1_tv.setText(getString(R.string.level_2));
+				break;
+			case 3:
+				report_1_1_tv.setText(getString(R.string.level_3));
+				break;
+		}
+		switch (report.getB_2_grade()){
+			case 0:
+				report_1_2_tv.setText(getString(R.string.level_0));
+				break;
+			case 1:
+				report_1_2_tv.setText(getString(R.string.level_1));
+				break;
+			case 2:
+				report_1_2_tv.setText(getString(R.string.level_2));
+				break;
+			case 3:
+				report_1_2_tv.setText(getString(R.string.level_3));
+				break;
+		}
+		switch (report.getB_3_grade()){
+			case 0:
+				report_1_3_tv.setText(getString(R.string.level_0));
+				break;
+			case 1:
+				report_1_3_tv.setText(getString(R.string.level_1));
+				break;
+			case 2:
+				report_1_3_tv.setText(getString(R.string.level_2));
+				break;
+			case 3:
+				report_1_3_tv.setText(getString(R.string.level_3));
+				break;
+		}
+		switch (report.getB_4_grade()){
+			case 0:
+				report_1_4_tv.setText(getString(R.string.level_0));
+				break;
+			case 1:
+				report_1_4_tv.setText(getString(R.string.level_1));
+				break;
+			case 2:
+				report_1_4_tv.setText(getString(R.string.level_2));
+				break;
+			case 3:
+				report_1_4_tv.setText(getString(R.string.level_3));
+				break;
+		}
+		switch (report.getE_grade_pre()){
+			case 0:
+				report_2_1_tv.setText(getString(R.string.grade_0));
+				break;
+			case 1:
+				report_2_1_tv.setText(getString(R.string.grade_1));
+				break;
+			case 2:
+				report_2_1_tv.setText(getString(R.string.grade_2));
+				break;
+			case 3:
+				report_2_1_tv.setText(getString(R.string.grade_3));
+				break;
+		}
+
+		String changeItem = report.getGrade_change_item() == null ? "" : report.getGrade_change_item();
+		if(changeItem.contains("1")){
+			report_3_1_tr.setVisibility(View.VISIBLE);
+			report_3_1_tv.setText(getString(R.string.item_change_1));
+		}
+		if(changeItem.contains("2")){
+			report_3_2_tr.setVisibility(View.VISIBLE);
+			report_3_2_ll.setVisibility(View.VISIBLE);
+			report_3_2_tv.setText(getString(R.string.item_change_2));
+		}
+		if(changeItem.contains("3")){
+			report_3_3_tr.setVisibility(View.VISIBLE);
+			report_3_3_ll.setVisibility(View.VISIBLE);
+			report_3_3_tv.setText(getString(R.string.item_change_3));
+		}
+
+		switch (report.getE_grade_final()){
+			case 0:
+				report_4_1_tv.setText(getString(R.string.grade_0));
+				break;
+			case 1:
+				report_4_1_tv.setText(getString(R.string.grade_1));
+				break;
+			case 2:
+				report_4_1_tv.setText(getString(R.string.grade_2));
+				break;
+			case 3:
+				report_4_1_tv.setText(getString(R.string.grade_3));
+				break;
+		}
 	}
 
 	@Override
 	public void initFinished() {
-		mViewPager.setAdapter(mAdapter);
-		mViewPager.setOffscreenPageLimit(2);
-		mIndicator.setViewPager(mViewPager, 0);
-		// 如果我们要对ViewPager设置监听，用indicator设置就行了
-		mIndicator.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-			@Override
-			public void onPageSelected(int arg0) {
-			}
 
-			@Override
-			public void onPageScrolled(int arg0, float arg1, int arg2) {
-			}
-
-			@Override
-			public void onPageScrollStateChanged(int arg0) {
-			}
-		});
 	}
 
 	@Override
@@ -66,46 +194,7 @@ public class EvaluateReportEditActivity extends BasicActiviy{
 		return super.onKeyDown(keyCode, event);
 	}
 
-	class TabAdapter extends FragmentPagerAdapter {
-		public TabAdapter(FragmentManager fm) {
-			super(fm);
-		}
 
-		@Override
-		public Fragment getItem(int arg0) {
-			Fragment fragment = null;
-			switch (arg0) {
-			case 0:
-				fragment = new B1();
-				break;
-			case 1:
-				fragment = new B1();
-				break;
-			case 2:
-				fragment = new B1();
-				break;
-			case 3:
-				fragment = new B1();
-				break;
-			default:
-				fragment = new EvaluatePaper();
-				break;
-			}
-
-			return fragment;
-		}
-
-		@Override
-		public CharSequence getPageTitle(int position) {
-			return EvaluatePaper.TITLE[position % EvaluatePaper.TITLE.length];
-		}
-
-		@Override
-		public int getCount() {
-			return EvaluatePaper.TITLE.length;
-		}
-
-	}
 	@Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if(resultCode == RESULT_OK){
@@ -133,12 +222,11 @@ public class EvaluateReportEditActivity extends BasicActiviy{
         super.onActivityResult(requestCode, resultCode, data);
     }	
 	public void back(View v){
-		GoActivityWithFinishing(MainListActivity.class, null);
+		GoActivityWithFinishing(EvaluateReportListActivity.class, null);
 	}
 
 	@Override
 	protected void onDestroy() {
-		mViewPager.removeAllViews();
 		super.onDestroy();
 	}
 }

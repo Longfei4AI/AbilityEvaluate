@@ -59,12 +59,19 @@
         <item name="android:background">@drawable/bg_edittext</item>
         <item name="android:textColorHint">@color/text_color_hint</item>
     </style>
-     <!-- 按钮 样式 -->
+     <!-- 下拉列表样式 -->
     <style name="Custom.Spinner">
         <item name="android:textSize">30sp</item>
         <item name="android:background">@drawable/spinner</item>
         <item name="android:padding">5dp</item>
         <item name="android:textColor">@color/text_color_inverse</item>
+    </style>
+    <!-- 复选框 样式 -->
+    <style name="Custom.text_checkbox">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:button">@drawable/checkbox</item>
     </style>
     <!-- 按钮 样式 -->
     <style name="Custom.Button">

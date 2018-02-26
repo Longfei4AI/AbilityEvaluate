@@ -7,8 +7,11 @@ import android.content.Context;
 
 import com.elder.abilityevaluate.basic.BasicEntity;
 import com.elder.abilityevaluate.utils.CustomDataHelper;
+import com.elder.abilityevaluate.utils.DataBaseHelper;
 import com.lidroid.xutils.db.annotation.Column;
 import com.lidroid.xutils.db.annotation.Table;
+import com.lidroid.xutils.db.sqlite.Selector;
+import com.lidroid.xutils.exception.DbException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -16,6 +19,8 @@ import org.json.JSONObject;
 
 @Table(name = "EvaluationReport")
 public class EvaluationReport extends BasicEntity {
+	public static final String FINISHED = "1";
+	public static final String NOT_FINISHED = "0";
 	@Column(column = "id")
 	private int id;
 	@Column(column = "baseInfoId")
@@ -43,19 +48,19 @@ public class EvaluationReport extends BasicEntity {
 	@Column(column = "e_temperature")
 	private int e_temperature;
 	@Column(column = "b_1_grade")
-	private String b_1_grade;
+	private int b_1_grade;
 	@Column(column = "b_2_grade")
-	private String b_2_grade;
+	private int b_2_grade;
 	@Column(column = "b_3_grade")
-	private String b_3_grade;
+	private int b_3_grade;
 	@Column(column = "b_4_grade")
-	private String b_4_grade;
+	private int b_4_grade;
 	@Column(column = "e_grade_pre")
-	private String e_grade_pre;
+	private int e_grade_pre = -1;
 	@Column(column = "grade_change_item")
 	private String grade_change_item;
 	@Column(column = "e_grade_final")
-	private String e_grade_final;
+	private int e_grade_final = -1;
 	@Column(column = "e_factor")
 	private String e_factor;
 	@Column(column = "e_tools")
@@ -76,6 +81,15 @@ public class EvaluationReport extends BasicEntity {
 	private String e_remark;
 	@Column(column = "state")
 	private String state;
+
+	public BaseInformation getBaseInformation(Context context) {
+		return DataBaseHelper.getInstance(context,BaseInformation.class).findFirst(
+				Selector.from(BaseInformation.class).where("baseInfoId", "=", this.baseInfoId));
+	}
+	public Evaluation getEvaluation(Context context) {
+		return DataBaseHelper.getInstance(context,Evaluation.class).findFirst(
+				Selector.from(Evaluation.class).where("baseInfoId", "=", this.baseInfoId));
+	}
 
 	public int getId() {
 		return id;
@@ -180,43 +194,43 @@ public class EvaluationReport extends BasicEntity {
 		this.e_temperature = e_temperature;
 	}
 
-	public String getB_1_grade() {
+	public int getB_1_grade() {
 		return b_1_grade;
 	}
 
-	public void setB_1_grade(String b_1_grade) {
+	public void setB_1_grade(int b_1_grade) {
 		this.b_1_grade = b_1_grade;
 	}
 
-	public String getB_2_grade() {
+	public int getB_2_grade() {
 		return b_2_grade;
 	}
 
-	public void setB_2_grade(String b_2_grade) {
+	public void setB_2_grade(int b_2_grade) {
 		this.b_2_grade = b_2_grade;
 	}
 
-	public String getB_3_grade() {
+	public int getB_3_grade() {
 		return b_3_grade;
 	}
 
-	public void setB_3_grade(String b_3_grade) {
+	public void setB_3_grade(int b_3_grade) {
 		this.b_3_grade = b_3_grade;
 	}
 
-	public String getB_4_grade() {
+	public int getB_4_grade() {
 		return b_4_grade;
 	}
 
-	public void setB_4_grade(String b_4_grade) {
+	public void setB_4_grade(int b_4_grade) {
 		this.b_4_grade = b_4_grade;
 	}
 
-	public String getE_grade_pre() {
+	public int getE_grade_pre() {
 		return e_grade_pre;
 	}
 
-	public void setE_grade_pre(String e_grade_pre) {
+	public void setE_grade_pre(int e_grade_pre) {
 		this.e_grade_pre = e_grade_pre;
 	}
 
@@ -228,11 +242,11 @@ public class EvaluationReport extends BasicEntity {
 		this.grade_change_item = grade_change_item;
 	}
 
-	public String getE_grade_final() {
+	public int getE_grade_final() {
 		return e_grade_final;
 	}
 
-	public void setE_grade_final(String e_grade_final) {
+	public void setE_grade_final(int e_grade_final) {
 		this.e_grade_final = e_grade_final;
 	}
 

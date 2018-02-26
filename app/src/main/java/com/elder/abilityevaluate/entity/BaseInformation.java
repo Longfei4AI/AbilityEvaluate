@@ -66,13 +66,13 @@ public class BaseInformation extends BasicEntity {
 	@Column(column = "a_2_13_3")
 	private String a_2_13_3;	//慢性疾病
 	@Column(column = "a_2_14_1")
-	private String a_2_14_1;	//跌倒
+	private int a_2_14_1 = -1;	//跌倒
 	@Column(column = "a_2_14_2")
-	private String a_2_14_2;	//走失
+	private int a_2_14_2 = -1;	//走失
 	@Column(column = "a_2_14_3")
-	private String a_2_14_3;	//噎食
+	private int a_2_14_3 = -1;	//噎食
 	@Column(column = "a_2_14_4")
-	private String a_2_14_4;	//自杀
+	private int a_2_14_4 = -1;	//自杀
 	@Column(column = "a_2_14_5")
 	private String a_2_14_5;	//其他
 	@Column(column = "a_3_1")
@@ -86,11 +86,11 @@ public class BaseInformation extends BasicEntity {
 	@Column(column = "state")
 	private String state;	//数据状态
 
-	public Evaluation getEvaluation(Context context) throws DbException {
+	public Evaluation getEvaluation(Context context) {
 		return DataBaseHelper.getInstance(context,Evaluation.class).findFirst(
 				Selector.from(Evaluation.class).where("baseInfoId", "=", this.baseInfoId));
 	}
-	public EvaluationReport getEvaluationReport(Context context) throws DbException {
+	public EvaluationReport getEvaluationReport(Context context) {
 		return DataBaseHelper.getInstance(context,EvaluationReport.class).findFirst(
 				Selector.from(EvaluationReport.class).where("baseInfoId", "=", this.baseInfoId));
 	}
@@ -279,35 +279,35 @@ public class BaseInformation extends BasicEntity {
 		this.a_2_13_3 = a_2_13_3;
 	}
 
-	public String getA_2_14_1() {
+	public int getA_2_14_1() {
 		return a_2_14_1;
 	}
 
-	public void setA_2_14_1(String a_2_14_1) {
+	public void setA_2_14_1(int a_2_14_1) {
 		this.a_2_14_1 = a_2_14_1;
 	}
 
-	public String getA_2_14_2() {
+	public int getA_2_14_2() {
 		return a_2_14_2;
 	}
 
-	public void setA_2_14_2(String a_2_14_2) {
+	public void setA_2_14_2(int a_2_14_2) {
 		this.a_2_14_2 = a_2_14_2;
 	}
 
-	public String getA_2_14_3() {
+	public int getA_2_14_3() {
 		return a_2_14_3;
 	}
 
-	public void setA_2_14_3(String a_2_14_3) {
+	public void setA_2_14_3(int a_2_14_3) {
 		this.a_2_14_3 = a_2_14_3;
 	}
 
-	public String getA_2_14_4() {
+	public int getA_2_14_4() {
 		return a_2_14_4;
 	}
 
-	public void setA_2_14_4(String a_2_14_4) {
+	public void setA_2_14_4(int a_2_14_4) {
 		this.a_2_14_4 = a_2_14_4;
 	}
 

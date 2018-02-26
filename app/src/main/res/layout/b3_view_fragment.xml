@@ -112,13 +112,15 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/line_table" >
+                android:background="@color/line_table"
+                android:visibility="gone">
             </LinearLayout>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:visibility="gone">
 
                 <TextView
                     style="@style/Custom.Font.Context.Inverse"

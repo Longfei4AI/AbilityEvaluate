@@ -37,6 +37,10 @@
     <string name="downloading">档案下载</string>
 
     <string name="base_information">基本信息</string>
+    <string name="add_base_information">添加基本信息</string>
+    <string name="edit_base_information">修改基本信息</string>
+    <string name="detail_base_information">基本信息明细</string>
+    <string name="detail_report">评估报告明细</string>
     <string name="ability_evaluate">能力评估</string>
     <string name="report_evaluate">评估报告</string>
     
@@ -189,10 +193,11 @@
     <string name="e_light">光线</string>
     <string name="e_air">空气</string>
     <string name="e_temperature">温度</string>
-    <string name="b_1_grade">日常生活活动等级</string>
-    <string name="b_2_grade">精神状态等级</string>
-    <string name="b_3_grade">感知觉与沟通等级</string>
-    <string name="b_4_grade">社会参与等级</string>
+    <string name="grade_classification">一级指标分级</string>
+    <string name="b_1_grade">日常生活活动</string>
+    <string name="b_2_grade">精神状态</string>
+    <string name="b_3_grade">感知觉与沟通</string>
+    <string name="b_4_grade">社会参与</string>
     <string name="e_grade_pre">老年人能力初步等级</string>
     <string name="grade_change_item">等级变更条款</string>
     <string name="e_grade_final">老年人能力最终等级</string>

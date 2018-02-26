@@ -40,8 +40,8 @@ public class WelcomeActivity extends BasicActiviy {
 		} else {
 			addShortcut(getResources().getString(R.string.app_name));
 		}
-		adTV1 = (TextView)findViewById(R.id.tv_ad1);
-		adTV2 = (TextView)findViewById(R.id.tv_ad2);
+		adTV1 = findViewById(R.id.tv_ad1);
+		adTV2 = findViewById(R.id.tv_ad2);
 	}
 	
 	/**

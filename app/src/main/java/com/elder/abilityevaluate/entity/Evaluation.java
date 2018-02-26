@@ -6,14 +6,20 @@ package com.elder.abilityevaluate.entity;
 import android.content.Context;
 import com.elder.abilityevaluate.basic.BasicEntity;
 import com.elder.abilityevaluate.utils.CustomDataHelper;
+import com.elder.abilityevaluate.utils.DataBaseHelper;
 import com.lidroid.xutils.db.annotation.Column;
 import com.lidroid.xutils.db.annotation.Table;
+import com.lidroid.xutils.db.sqlite.Selector;
+import com.lidroid.xutils.exception.DbException;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 @Table(name = "Evaluation")
 public class Evaluation extends BasicEntity {
+	public static final String FINISHED = "1";
+	public static final String NOT_FINISHED = "0";
 	@Column(column = "id")
 	private int id;
 	@Column(column = "baseInfoId")
@@ -41,7 +47,7 @@ public class Evaluation extends BasicEntity {
 	@Column(column = "b_1_score")
 	private int b_1_score = -1;
 	@Column(column = "b_1_level")
-	private String b_1_level;
+	private int b_1_level = -1;
 	@Column(column = "b_2_1")
 	private int b_2_1 = -1;
 	@Column(column = "b_2_2")
@@ -51,7 +57,7 @@ public class Evaluation extends BasicEntity {
 	@Column(column = "b_2_score")
 	private int b_2_score = -1;
 	@Column(column = "b_2_level")
-	private String b_2_level;
+	private int b_2_level = -1;
 	@Column(column = "b_3_1")
 	private int b_3_1 = -1;
 	@Column(column = "b_3_2")
@@ -63,7 +69,7 @@ public class Evaluation extends BasicEntity {
 	@Column(column = "b_3_score")
 	private int b_3_score = -1;
 	@Column(column = "b_3_level")
-	private String b_3_level;
+	private int b_3_level = -1;
 	@Column(column = "b_4_1")
 	private int b_4_1 = -1;
 	@Column(column = "b_4_2")
@@ -77,7 +83,7 @@ public class Evaluation extends BasicEntity {
 	@Column(column = "b_4_score")
 	private int b_4_score = -1;
 	@Column(column = "b_4_level")
-	private String b_4_level;
+	private int b_4_level = -1;
 	@Column(column = "state")
 	private String state;
 
@@ -184,11 +190,11 @@ public class Evaluation extends BasicEntity {
 		this.b_1_score = b_1_score;
 	}
 
-	public String getB_1_level() {
+	public int getB_1_level() {
 		return b_1_level;
 	}
 
-	public void setB_1_level(String b_1_level) {
+	public void setB_1_level(int b_1_level) {
 		this.b_1_level = b_1_level;
 	}
 
@@ -224,11 +230,11 @@ public class Evaluation extends BasicEntity {
 		this.b_2_score = b_2_score;
 	}
 
-	public String getB_2_level() {
+	public int getB_2_level() {
 		return b_2_level;
 	}
 
-	public void setB_2_level(String b_2_level) {
+	public void setB_2_level(int b_2_level) {
 		this.b_2_level = b_2_level;
 	}
 
@@ -272,11 +278,11 @@ public class Evaluation extends BasicEntity {
 		this.b_3_score = b_3_score;
 	}
 
-	public String getB_3_level() {
+	public int getB_3_level() {
 		return b_3_level;
 	}
 
-	public void setB_3_level(String b_3_level) {
+	public void setB_3_level(int b_3_level) {
 		this.b_3_level = b_3_level;
 	}
 
@@ -328,11 +334,11 @@ public class Evaluation extends BasicEntity {
 		this.b_4_score = b_4_score;
 	}
 
-	public String getB_4_level() {
+	public int getB_4_level() {
 		return b_4_level;
 	}
 
-	public void setB_4_level(String b_4_level) {
+	public void setB_4_level(int b_4_level) {
 		this.b_4_level = b_4_level;
 	}
 
@@ -344,6 +350,14 @@ public class Evaluation extends BasicEntity {
 		this.state = state;
 	}
 
+	public BaseInformation getBaseInformation(Context context) {
+		return DataBaseHelper.getInstance(context,BaseInformation.class).findFirst(
+				Selector.from(BaseInformation.class).where("baseInfoId", "=", this.baseInfoId));
+	}
+	public EvaluationReport getEvaluationReport(Context context) {
+		return DataBaseHelper.getInstance(context,EvaluationReport.class).findFirst(
+				Selector.from(EvaluationReport.class).where("baseInfoId", "=", this.baseInfoId));
+	}
 	public static int insertByJson(Context context, String json) {
 		if (json == null || json.equals("")) {
 			return 0;

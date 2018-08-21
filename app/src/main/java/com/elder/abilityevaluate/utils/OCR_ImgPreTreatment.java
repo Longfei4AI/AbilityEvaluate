@@ -59,6 +59,7 @@ public class OCR_ImgPreTreatment {
 		// int[] T = { T1, T2, T3 };
 		//
 		// Bitmap result = selectBinarization(T);
+
 		Bitmap result = binarization(T1);
 
 		return result;
@@ -66,23 +67,36 @@ public class OCR_ImgPreTreatment {
 
 	/**
 	 * 获取当前图片的灰度图
-	 *
-	 * @param原图片
 	 * @return 灰度图
 	 */
 	private static Bitmap getGrayImg() {
 
 		int alpha = 0xFF << 24;
+		int white = 0xffffffff;
 		for (int i = 0; i < imgHeight; i++) {
 			for (int j = 0; j < imgWidth; j++) {
-				int grey = imgPixels[imgWidth * i + j];
-
+				//int grey = getGray(imgPixels[imgWidth * i + j]);
+				int grey = black_white(imgPixels[imgWidth * i + j]);
+				/*
 				int red = ((grey & 0x00FF0000) >> 16);
 				int green = ((grey & 0x0000FF00) >> 8);
 				int blue = (grey & 0x000000FF);
 
 				grey = (int) ((float) red * 0.3 + (float) green * 0.59 + (float) blue * 0.11);
 				grey = alpha | (grey << 16) | (grey << 8) | grey;
+				*/
+				// 去掉头像
+				if(( i < imgHeight * 3 / 4 ) && ( j > imgWidth * 2 / 3.3 )){
+					grey = white;
+				}
+				//去掉边
+                int topMargin = 100;
+                int bottomMargin = 50;
+                int leftMargin = 85;
+                int rightMargin = 110;
+				if(( i < topMargin ) || i > imgHeight - bottomMargin || ( j < leftMargin ) || j > imgWidth - rightMargin){
+					grey = white;
+				}
 				imgPixels[imgWidth * i + j] = grey;
 			}
 		}
@@ -94,6 +108,7 @@ public class OCR_ImgPreTreatment {
 
 	private static int getGray(int argb) {
 		int alpha = 0xFF << 24;
+		// 下面三行代码将一个数字转换为RGB数字
 		int red = ((argb & 0x00FF0000) >> 16);
 		int green = ((argb & 0x0000FF00) >> 8);
 		int blue = (argb & 0x000000FF);
@@ -102,7 +117,28 @@ public class OCR_ImgPreTreatment {
 		grey = alpha | (grey << 16) | (grey << 8) | grey;
 		return grey;
 	}
+	//
+	private static int black_white(int argb){
+		// 获取颜色的各个部分的值
+		int red = ((argb & 0x00FF0000) >> 16);
+		int green = ((argb & 0x0000FF00) >> 8);
+		int blue = (argb & 0x000000FF);
+		int avg=(red+green+blue)/3;
+		if (avg > 135) {
+			return  0xffffffff;//白色
+		}
+		//System.out.println("red=="+red + "; green="+green +"; blue ="+blue);
+		return argb;
 
+		/*
+		int avg=(red+green+blue)/3;
+		if (avg<70) {
+			return  0xff000000;//黑色
+		}else {
+			return 0xffffffff;//白色
+		}
+		*/
+	}
 	// 利用迭代法计算阈值
 	private static int getIterationHresholdValue(int minGrayValue,
 												 int maxGrayValue) {
@@ -251,7 +287,7 @@ public class OCR_ImgPreTreatment {
 	/**
 	 * 由3个阈值投票二值化图片
 	 *
-	 * @param原图片
+	 *            原图片
 	 * @param T
 	 *            三种方法获得的阈值
 	 * @return 二值化的图片

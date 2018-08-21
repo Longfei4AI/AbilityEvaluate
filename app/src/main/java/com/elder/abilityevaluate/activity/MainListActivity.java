@@ -15,21 +15,32 @@ import com.elder.abilityevaluate.R;
 import com.elder.abilityevaluate.basic.BasicActiviy;
 import com.elder.abilityevaluate.config.GlobalSetting;
 import com.elder.abilityevaluate.config.PreferenceParams;
+import com.elder.abilityevaluate.entity.BaseInformation;
+import com.elder.abilityevaluate.entity.Evaluation;
+import com.elder.abilityevaluate.entity.EvaluationReport;
 import com.elder.abilityevaluate.eventBus.Event;
 import com.elder.abilityevaluate.service.LogService;
+import com.elder.abilityevaluate.utils.DataBaseHelper;
+import com.elder.abilityevaluate.utils.DateUtils;
 import com.elder.abilityevaluate.utils.GlobalInfo;
 import com.elder.abilityevaluate.utils.LocalMethod;
 import com.elder.abilityevaluate.utils.MyLog;
+import com.elder.abilityevaluate.widget.ClearDataDialog;
 import com.elder.abilityevaluate.widget.CustomDialog;
 import com.elder.abilityevaluate.widget.CustomLoadingDialog;
+import com.elder.abilityevaluate.widget.CustomToast;
 import com.elder.abilityevaluate.widget.UserInfoDialog;
+import com.lidroid.xutils.db.sqlite.Selector;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import de.greenrobot.event.EventBus;
 
 public class MainListActivity extends BasicActiviy {
-    public static final int DIALOG_LOGOUT = 0x01;
+    public static final int DIALOG_CLEAR_DATA = 0x01;
     public static final int DIALOG_EXIT = 0x02;
     public final static int EVENT_DOWNLOAD = 0x0A;
     // 基本信息
@@ -38,6 +49,8 @@ public class MainListActivity extends BasicActiviy {
     private static final String MODEL_ABILITY_EVALUATE = "ability_evaluate";
     // 评估报告
     private static final String MODEL_REPORT_EVALUATE = "report_evaluate";
+    // 数据清理
+    private static final String MODEL_DATA_CLEAR = "data_clear";
     // 参数设置
     private static final String MODEL_SETTING = "setting";
     // 数据上报
@@ -46,10 +59,13 @@ public class MainListActivity extends BasicActiviy {
     private CustomLoadingDialog loadingDialog;
     private CustomDialog confirmDialog;
     private CustomDialog alertDialog;
-    private UserInfoDialog userInfoDialog;
+    private ClearDataDialog clearDataDialog;
     private String corpCode = "";
     private ListView listview = null;
     private TextView userName;
+    private TextView register_detailTV;
+    private TextView evaluate_detailTV;
+    private TextView left_detailTV;
     private SharedPreferences spf;
     private int dialogType = 0;
 
@@ -63,11 +79,15 @@ public class MainListActivity extends BasicActiviy {
 
     @Override
     public void init() {
-        listview = (ListView) findViewById(R.id.menu_list);
-        userName = (TextView) findViewById(R.id.tv_username);
+        listview =  findViewById(R.id.menu_list);
+        userName =  findViewById(R.id.tv_username);
+        register_detailTV = findViewById(R.id.register_detail);
+        evaluate_detailTV = findViewById(R.id.evaluate_detail);
+        left_detailTV = findViewById(R.id.left_detail);
         spf = getSharedPreferences(
                 GlobalSetting.PREFERENCE_NAME, Context.MODE_PRIVATE);
         corpCode = spf.getString(PreferenceParams.CORP_CODE, "");
+
     }
 
     @Override
@@ -91,15 +111,7 @@ public class MainListActivity extends BasicActiviy {
         });
         userName.setText(spf.getString(PreferenceParams.USER_NAME, "未登录"));
         loadingDialog = new CustomLoadingDialog(this);
-        userInfoDialog = new UserInfoDialog(this,new UserInfoDialog.CallBack() {
-            @Override
-            public void logOut() {
-                dialogType = DIALOG_LOGOUT;
-                confirmDialog.setType(CustomDialog.TYPE_QUESTION);
-                confirmDialog.setMessage("确定注销当前登录状态？");
-                confirmDialog.show();
-            }
-        });
+
         CustomDialog.Builder builder = new CustomDialog.Builder(this);
         builder.setTitle("提示")
                 .setPositiveButton(R.string.sure,
@@ -123,6 +135,42 @@ public class MainListActivity extends BasicActiviy {
                     }
                 });
         alertDialog =  builder.create();
+
+        //今日登记人数
+        List<BaseInformation> registerTodayList = DataBaseHelper.getInstance(this,BaseInformation.class)
+                .getListBySelector(Selector.from(BaseInformation.class).where("registerTime","like", DateUtils.getCurDate()+"%"));
+
+        //累计登记人数
+        List<BaseInformation> registerAllList = DataBaseHelper.getInstance(this,BaseInformation.class)
+                .getListBySelector(Selector.from(BaseInformation.class));
+
+        //今日评估人数
+        List<BaseInformation> evaluateTodayList = DataBaseHelper.getInstance(this,BaseInformation.class)
+                .getListBySelector(Selector.from(BaseInformation.class).where("a_1_2","=", DateUtils.getCurDate())
+                        .and("state","=",BaseInformation.EVALUATED));
+
+        //累计评估人数
+        List<BaseInformation> evaluateAllList = DataBaseHelper.getInstance(this,BaseInformation.class)
+                .getListBySelector(Selector.from(BaseInformation.class).where("state","=",BaseInformation.EVALUATED));
+        //剩余评估人数
+        List<BaseInformation> leftList = DataBaseHelper.getInstance(this,BaseInformation.class)
+                .getListBySelector(Selector.from(BaseInformation.class).where("state","=",BaseInformation.NOT_EVALUATED));
+        register_detailTV.setText( String.format(getResources().getString(R.string.register_detail),registerTodayList.size(),registerAllList.size()) );
+        evaluate_detailTV.setText( String.format(getResources().getString(R.string.evaluate_detail),evaluateTodayList.size(),evaluateAllList.size()) );
+        left_detailTV.setText( String.format(getResources().getString(R.string.left_detail),leftList.size()) );
+
+        clearDataDialog = new ClearDataDialog(this,new ClearDataDialog.CallBack() {
+            @Override
+            public void clear() {
+                dialogType = DIALOG_CLEAR_DATA;
+                confirmDialog.setType(CustomDialog.TYPE_QUESTION);
+                confirmDialog.setMessage("数据清理后将不能恢复，确定要清理所有数据？");
+                confirmDialog.show();
+            }
+        });
+        clearDataDialog.registerSize = registerAllList.size();
+        clearDataDialog.evaluatedSize = evaluateAllList.size();
+        clearDataDialog.leftSize = leftList.size();
     }
     /**
      * 初始化功能模块
@@ -150,6 +198,13 @@ public class MainListActivity extends BasicActiviy {
         report.put("ItemContent", "查看和导出评估报告。");
         list.add(report);
 
+        HashMap<String, Object> dataClear = new HashMap<String, Object>();
+        dataClear.put("ItemText", getResources().getString(R.string.data_clear));
+        dataClear.put("ItemImage", R.drawable.trash);
+        dataClear.put("ItemId", MODEL_DATA_CLEAR);
+        dataClear.put("ItemContent", "清理所有历史数据，清除后，数据不能恢复。");
+        list.add(dataClear);
+
         HashMap<String, Object> setting = new HashMap<String, Object>();
         setting.put("ItemText", getResources().getString(R.string.setting));
         setting.put("ItemImage", R.drawable.setting_h);
@@ -168,6 +223,8 @@ public class MainListActivity extends BasicActiviy {
             GoActivityWithFinishing(EvaluationListActivity.class,null);
         } else if (modelFlag.equals(MODEL_REPORT_EVALUATE)) {// 评估报告
             GoActivityWithFinishing(EvaluateReportListActivity.class,null);
+        }else if (modelFlag.equals(MODEL_DATA_CLEAR)) {// 数据清理
+            clearData();
         }else if (modelFlag.equals(MODEL_SETTING)) {// 参数设置
             GoActivityWithFinishing(SettingActivity.class,null);
         }else if (modelFlag.equals(MODEL_UPLOAD)) {// 数据上报
@@ -185,13 +242,32 @@ public class MainListActivity extends BasicActiviy {
     }
 
     /**
-     * @Title: logOut
-     * @Description: 注销
+     * @Title: clearData
+     * @Description: 数据清理对话框
      * @return void    返回类型
      * @throws
      */
-    public void logOut(View v){
-        userInfoDialog.show();
+    public void clearData(){
+        clearDataDialog.show();
+    }
+    /**
+     * @Title: clearHistoryData
+     * @Description: 数据清理
+     * @return void    返回类型
+     * @throws
+     */
+    public void clearHistoryData(){
+        DataBaseHelper.getInstance(this,EvaluationReport.class).deleteAll(EvaluationReport.class);
+        DataBaseHelper.getInstance(this,Evaluation.class).deleteAll(Evaluation.class);
+        DataBaseHelper.getInstance(this,BaseInformation.class).deleteAll(BaseInformation.class);
+        File file = new File(GlobalInfo.PIC_PATH);
+        if(file.exists()){
+            File[] delFile = file.listFiles();
+            for (File f : delFile){
+                f.delete();
+            }
+        }
+        CustomToast.show(this,"数据清理完成！",1);
     }
     private void doAfterConfirm(boolean flag) {
         confirmDialog.dismiss();
@@ -205,13 +281,13 @@ public class MainListActivity extends BasicActiviy {
                 } else {
                 }
                 break;
-            case DIALOG_LOGOUT:
+            case DIALOG_CLEAR_DATA:
                 if (flag) {
-                    userInfoDialog.dismiss();
+                    clearDataDialog.dismiss();
                     Intent stateService = new Intent(this,
                             LogService.class);
                     this.stopService(stateService);
-                    GoActivityWithFinishing(LoginActivity.class, null);
+                    clearHistoryData();
                 }
                 break;
             default:

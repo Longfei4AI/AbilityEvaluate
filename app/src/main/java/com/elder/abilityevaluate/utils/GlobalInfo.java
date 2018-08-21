@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.res.Resources;
 import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.net.ConnectivityManager;
@@ -14,13 +15,9 @@ import android.os.Environment;
  * @author xcj 环境信息获取类
  */
 public class GlobalInfo {
-
+	public final static String PIC_PATH = Environment.getExternalStorageDirectory().getAbsolutePath()+"/evaluate/images";
 	public static String userName;
 	public static String userRealName;
-	public static String storeHouseStr;
-	public static String storeHouseJson;
-	public static String storeSumJson;
-	public static String storeSumStr;
 	/**
 	 * 判断wifi 是否开启
 	 * 
@@ -171,5 +168,16 @@ public class GlobalInfo {
 			}
 		}
 		return c; 
+	}
+
+	public static int px2dip(int pxValue){
+		final float scale = Resources.getSystem().getDisplayMetrics().density;
+		return (int) (pxValue / scale + 0.5f);
+	}
+
+
+	public static int dip2px(float dipValue){
+		final float scale = Resources.getSystem().getDisplayMetrics().density;
+		return  (int)(dipValue * scale + 0.5);
 	}
 }

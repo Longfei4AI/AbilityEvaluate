@@ -5,6 +5,7 @@ package com.elder.abilityevaluate.entity;
 
 import android.content.Context;
 
+import com.elder.abilityevaluate.R;
 import com.elder.abilityevaluate.basic.BasicEntity;
 import com.elder.abilityevaluate.utils.CustomDataHelper;
 import com.elder.abilityevaluate.utils.DataBaseHelper;
@@ -205,6 +206,24 @@ public class EvaluationReport extends BasicEntity {
 	public int getB_2_grade() {
 		return b_2_grade;
 	}
+	public int getB_grade_strId(int grade) {
+		int strId = R.string.level_0;
+		switch (grade){
+			case 0:
+				strId = R.string.level_0;
+				break;
+			case 1:
+				strId = R.string.level_1;
+				break;
+			case 2:
+				strId = R.string.level_2;
+				break;
+			case 3:
+				strId = R.string.level_3;
+				break;
+		}
+		return strId;
+	}
 
 	public void setB_2_grade(int b_2_grade) {
 		this.b_2_grade = b_2_grade;
@@ -228,6 +247,24 @@ public class EvaluationReport extends BasicEntity {
 
 	public int getE_grade_pre() {
 		return e_grade_pre;
+	}
+	public int getE_grade_strId(int grade){
+		int strId = R.string.grade_0;
+		switch (grade){
+			case 0:
+				strId = R.string.grade_0;
+				break;
+			case 1:
+				strId = R.string.grade_1;
+				break;
+			case 2:
+				strId = R.string.grade_2;
+				break;
+			case 3:
+				strId = R.string.grade_3;
+				break;
+		}
+		return strId;
 	}
 
 	public void setE_grade_pre(int e_grade_pre) {

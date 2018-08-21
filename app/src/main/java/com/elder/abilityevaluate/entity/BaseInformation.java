@@ -83,6 +83,8 @@ public class BaseInformation extends BasicEntity {
 	private String a_3_3;	//联系人姓名
 	@Column(column = "a_3_4")
 	private String a_3_4;	//联系人电话
+	@Column(column = "registerTime")
+	private String registerTime;	//登记时间
 	@Column(column = "state")
 	private String state;	//数据状态
 
@@ -353,6 +355,14 @@ public class BaseInformation extends BasicEntity {
 
 	public String getState() {
 		return state;
+	}
+
+	public String getRegisterTime() {
+		return registerTime;
+	}
+
+	public void setRegisterTime(String registerTime) {
+		this.registerTime = registerTime;
 	}
 
 	public void setState(String state) {

@@ -35,6 +35,9 @@
     <string name="setting">系统设置</string>
     <string name="weighting">A2</string>
     <string name="downloading">档案下载</string>
+    <string name="data_clear">数据清理</string>
+    <string name="clear_all">全部清理</string>
+    <string name="clear_cancel">不清理了</string>
 
     <string name="base_information">基本信息</string>
     <string name="add_base_information">添加基本信息</string>
@@ -53,6 +56,7 @@
     <string name="store_sum">A9</string>
     
     <string name="index">序号</string>
+    <string name="history_data">历史数据</string>
 
 
     <string-array name = "sell_form" >
@@ -212,5 +216,9 @@
     <string name="e_evaluator">评估员</string>
     <string name="e_remark">备注</string>
     <string name="state">数据状态</string>
+
+    <string name="register_detail">今日登记%1$d位老人，累计登记%2$d位老人；</string>
+    <string name="evaluate_detail">今日评估%1$d位老人，累计评估%2$d位老人；</string>
+    <string name="left_detail">剩余%1$d位老人待评估。</string>
 
 </resources>

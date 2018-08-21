@@ -197,58 +197,32 @@
                         android:layout_marginTop="10dp"
                         android:paddingLeft="5dp" >
                         <LinearLayout
-                            android:layout_width="180dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:gravity="center_horizontal"
                             android:paddingLeft="10dp"
                             android:orientation="vertical" >
-                            <Button
-                                android:id="@+id/picture_front_btn"
-                                style="@style/Custom.Button.Green"
-                                android:textSize="20dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="身份证正面" />
 
                             <ImageView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:id="@+id/picture_front"
                                 />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="180dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center_horizontal"
-                            android:paddingLeft="10dp"
-                            android:orientation="vertical" >
-                            <Button
-                                android:id="@+id/picture_back_btn"
-                                style="@style/Custom.Button.Green"
-                                android:textSize="20dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="身份证反面" />
-
                             <ImageView
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 android:id="@+id/picture_back"
                                 />
                         </LinearLayout>
+
                         <LinearLayout
-                            android:layout_width="180dp"
+                            android:layout_width="250dp"
                             android:layout_height="match_parent"
                             android:gravity="center_horizontal"
                             android:paddingLeft="10dp"
                             android:orientation="vertical" >
-                            <Button
-                                android:id="@+id/picture_full_btn"
-                                style="@style/Custom.Button.Green"
-                                android:textSize="20dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="持证照" />
 
                             <ImageView
                                 android:layout_width="match_parent"

@@ -53,26 +53,29 @@
                 >
             </TextView>
             <TextView
+                android:id="@+id/register_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="50dp"
-                android:text="今日登记10位老人，累计登记20位老人；"
+                android:text="@string/register_detail"
                 android:textSize="23dp"
                 >
             </TextView>
             <TextView
+                android:id="@+id/evaluate_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="50dp"
-                android:text="今日评估5位老人，累计评估15位老人；"
+                android:text="@string/evaluate_detail"
                 android:textSize="23dp"
                 >
             </TextView>
             <TextView
+                android:id="@+id/left_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="50dp"
-                android:text="剩余5位老人待评估。"
+                android:text="@string/left_detail"
                 android:textSize="23dp"
                 >
             </TextView>

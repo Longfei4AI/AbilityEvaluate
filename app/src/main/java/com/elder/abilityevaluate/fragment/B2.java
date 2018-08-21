@@ -7,14 +7,23 @@
  */
 package com.elder.abilityevaluate.fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.StrictMode;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -25,8 +34,15 @@ import com.elder.abilityevaluate.entity.BaseInformation;
 import com.elder.abilityevaluate.entity.Evaluation;
 import com.elder.abilityevaluate.eventBus.Event;
 import com.elder.abilityevaluate.utils.DataBaseHelper;
+import com.elder.abilityevaluate.utils.GlobalInfo;
+import com.elder.abilityevaluate.utils.OCR_Main;
 import com.elder.abilityevaluate.widget.CustomToast;
 import com.lidroid.xutils.db.sqlite.Selector;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import de.greenrobot.event.EventBus;
 
@@ -41,6 +57,7 @@ public class B2 extends BaseFragment {
 	private RadioGroup b_2_2_rg;
 	private RadioGroup b_2_3_rg;
 	private TextView b_2_score_tv;
+	private ImageView picture_watchIV;
 	private RadioGroup b_2_level_rg;
 	private Evaluation evaluation = null;
 	private String baseId = null;
@@ -48,7 +65,11 @@ public class B2 extends BaseFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		baseId = getActivity().getIntent().getExtras().getString("id");
-		System.out.println("baseId=="+baseId);
+		//解决 Android N 上报错：android.os.FileUriExposedException
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+			StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+			StrictMode.setVmPolicy(builder.build());
+		}
 		EventBus.getDefault().register(this);
 	}
 
@@ -84,6 +105,13 @@ public class B2 extends BaseFragment {
 		});
 		b_2_score_tv = rootView.findViewById(R.id.b_2_score_TV);
 		b_2_level_rg = rootView.findViewById(R.id.b_2_level_RG);
+		picture_watchIV = rootView.findViewById(R.id.picture_watch);
+		picture_watchIV.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				takePhoto();
+			}
+		});
 		this.initData();
 		return rootView;
 	}
@@ -102,6 +130,12 @@ public class B2 extends BaseFragment {
 			CustomToast.show(this.getActivity(), "获取数据失败！", CustomToast.LENGTH_SHORT);
 			return;
 		}
+		String fileName = baseId + "_watch.jpg";
+		File file_watch = new File(GlobalInfo.PIC_PATH, fileName);
+		if(file_watch.exists()){
+			picture_watchIV.setImageURI(Uri.fromFile(file_watch));
+		}
+
 		switch (evaluation.getB_2_1()) {
 			case 0:
 				b_2_1_rg.check(R.id.b_2_1_0_RB);
@@ -237,7 +271,113 @@ public class B2 extends BaseFragment {
 	public void refreshData(String baseId) {
 
 	}
-
+	/**
+	 * @Author: wlf
+	 * @Time: 2018/3/1 8:36
+	 * @Desc: 拍照
+	 * @Params:
+	 * @Return:
+	 */
+	public void takePhoto() {
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		//指定照片保存路径（SD卡），temp.jpg为一个临时文件，每次拍照后这个图片都会被替换
+		intent.putExtra(MediaStore.EXTRA_OUTPUT,
+				Uri.fromFile(new File(OCR_Main.IMG_PATH, "temp.jpg")));
+		try {
+			startActivityForResult(intent, OCR_Main.PHOTO_CAPTURE);
+		}catch (Exception e){
+			e.printStackTrace();
+			CustomToast.show(this.getActivity(),"请打开应用程序存储权限!",1);
+		}
+	}
+	/**
+	 * @Author: wlf
+	 * @Time: 2018/3/1 8:43
+	 * @Desc: 调用系统图片编辑进行裁剪
+	 * @Params:
+	 * @Return:
+	 */
+	public void startPhotoCrop(Uri uri) {
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setDataAndType(uri, "image/*");
+		intent.putExtra("crop", "true");
+		intent.putExtra("scale", true);
+		intent.putExtra(MediaStore.EXTRA_OUTPUT,
+				Uri.fromFile(new File(OCR_Main.IMG_PATH, "temp_cropped.jpg")));
+		intent.putExtra("return-data", false);
+		intent.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
+		intent.putExtra("noFaceDetection", true); // no face detection
+		startActivityForResult(intent, OCR_Main.PHOTO_RESULT);
+	}
+	/**
+	 * 根据URI获取位图
+	 *
+	 * @param uri
+	 * @return 对应的位图
+	 */
+	private Bitmap decodeUriAsBitmap(Uri uri) {
+		Bitmap bitmap = null;
+		try {
+			bitmap = BitmapFactory.decodeStream(this.getActivity().getContentResolver()
+					.openInputStream(uri));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return bitmap;
+	}
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		System.out.println("B2.onActivityResult");
+		if (resultCode == Activity.RESULT_CANCELED){
+			return;
+		}
+		if (requestCode == OCR_Main.PHOTO_CAPTURE) {
+			startPhotoCrop(Uri.fromFile(new File(OCR_Main.IMG_PATH, "temp.jpg")));//裁剪图片
+			return;
+		}
+		if (requestCode == OCR_Main.PHOTO_RESULT){
+			Bitmap bitmapSelected = decodeUriAsBitmap(Uri.fromFile(new File(OCR_Main.IMG_PATH,
+					"temp_cropped.jpg")));
+			picture_watchIV.setImageBitmap(bitmapSelected);
+			this.savePicture(bitmapSelected);
+			if(null != bitmapSelected){
+				//	bitmap.recycle();
+			}
+		}
+	}
+	/**
+	 * @Author: wlf
+	 * @Time: 2018/2/28 23:16
+	 * @Desc: 保存图片
+	 * @Params:
+	 * @Return:
+	 */
+	private void savePicture(Bitmap bitmapSelected){
+		String fileName = baseId + "_watch.jpg";
+		FileOutputStream out = null;
+		File file = Environment.getExternalStorageDirectory();
+		File myfile = null;
+		try{
+			myfile = new File(file.getAbsolutePath()+"/evaluate/images");
+			if(!myfile.exists()){
+				myfile.mkdirs();
+			}
+			out = new FileOutputStream(myfile + "/" +fileName);
+			bitmapSelected.compress(Bitmap.CompressFormat.JPEG,100,out);
+		}catch (IOException e){
+			e.printStackTrace();
+			return;
+		}finally {
+			try {
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
 	public void onEventMainThread(Event.MsgEvent msgEvent) {
 		if (msgEvent.type == EVENT_GETDATA
 				&& msgEvent.fromClass == B2.class) {

@@ -214,58 +214,59 @@
 
                     <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="400dp"
+                        android:layout_height="500dp"
                         android:layout_marginTop="10dp"
-                        android:paddingLeft="5dp" >
+                        android:paddingLeft="0dp" >
+
                         <LinearLayout
-                            android:layout_width="180dp"
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
                             android:gravity="center_horizontal"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="0dp"
                             android:orientation="vertical" >
-                            <Button
-                                android:id="@+id/picture_front_btn"
-                                style="@style/Custom.Button.Green"
-                                android:textSize="20dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:onClick="takePhoto"
-                                android:text="身份证正面" />
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <Button
+                                    android:id="@+id/picture_front_btn"
+                                    style="@style/Custom.Button.Green"
+                                    android:textSize="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:onClick="takePhoto"
+                                    android:text="身份证正面" />
+
+                                <Button
+                                    android:id="@+id/picture_back_btn"
+                                    style="@style/Custom.Button.Green"
+                                    android:textSize="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:onClick="takePhoto"
+                                    android:text="身份证反面" />
+                            </TableRow>
+
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
                                 android:id="@+id/picture_front"
-                                android:onClick="takePhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="180dp"
-                            android:layout_height="match_parent"
-                            android:gravity="center_horizontal"
-                            android:paddingLeft="10dp"
-                            android:orientation="vertical" >
-                            <Button
-                                android:id="@+id/picture_back_btn"
-                                style="@style/Custom.Button.Green"
-                                android:textSize="20dp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:onClick="takePhoto"
-                                android:text="身份证反面" />
 
                             <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
                                 android:id="@+id/picture_back"
-                                android:onClick="takePhoto"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
                                 />
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="180dp"
+                            android:layout_width="250dp"
                             android:layout_height="match_parent"
                             android:gravity="center_horizontal"
-                            android:paddingLeft="10dp"
+                            android:paddingLeft="5dp"
                             android:orientation="vertical" >
                             <Button
                                 android:id="@+id/picture_full_btn"
@@ -280,7 +281,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:id="@+id/picture_full"
-                                android:onClick="takePhoto"
                                 />
                         </LinearLayout>
                     </TableRow>
@@ -1469,5 +1469,6 @@
             android:text="@string/save" />
 
     </TableRow>
+
 
 </RelativeLayout>

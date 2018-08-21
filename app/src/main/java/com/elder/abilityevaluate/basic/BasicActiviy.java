@@ -69,16 +69,18 @@ public abstract class BasicActiviy extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//requestWindowFeature(Window.FEATURE_NO_TITLE);
 		super.onCreate(savedInstanceState);
 		// 设置无标题必须在setContentView之前设置
 		Window window = getWindow();
 		window.setBackgroundDrawable(null);
 		// 设置全屏
+		/*
 		if (GlobalSetting.FULL_SCREEN) {
 			window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 					WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		}
+		*/
 		// 保持长亮
 		if (GlobalSetting.KEEP_SCREEN_ON) {
 			window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

@@ -1,5 +1,6 @@
 package com.elder.abilityevaluate.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -201,6 +202,8 @@ public class EvaluationEditActivity extends BasicActiviy{
 	private EvaluationReport updateReport(EvaluationReport evaluationReport){
 		BaseInformation baseInfor = DataBaseHelper.getInstance(this,BaseInformation.class).
 				findFirst(Selector.from(BaseInformation.class).where("baseInfoId","=",baseId));
+		evaluationReport.setE_code(baseInfor.getA_1_1());
+		evaluationReport.setE_time(baseInfor.getA_1_2());
 		int b_1_level = evaluation.getB_1_level();
 		int b_2_level = evaluation.getB_2_level();
 		int b_3_level = evaluation.getB_3_level();
@@ -245,6 +248,7 @@ public class EvaluationEditActivity extends BasicActiviy{
 		GeneratorReportDocument.getInstance(this).Save(evaluationReport);
 		return  evaluationReport;
 	}
+
 	@Override
 	protected void onDestroy() {
 		mViewPager.removeAllViews();

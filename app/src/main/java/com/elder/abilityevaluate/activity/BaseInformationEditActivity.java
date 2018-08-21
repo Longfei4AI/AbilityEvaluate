@@ -5,13 +5,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.view.KeyEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -24,7 +30,12 @@ import com.elder.abilityevaluate.entity.BaseInformation;
 import com.elder.abilityevaluate.entity.Evaluation;
 import com.elder.abilityevaluate.entity.EvaluationReport;
 import com.elder.abilityevaluate.eventBus.Event;
+import com.elder.abilityevaluate.utils.CameraTopRectView;
 import com.elder.abilityevaluate.utils.DataBaseHelper;
+import com.elder.abilityevaluate.utils.DateUtils;
+import com.elder.abilityevaluate.utils.GlobalInfo;
+import com.elder.abilityevaluate.utils.OCR_ImgPreTreatment;
+import com.elder.abilityevaluate.utils.OCR_Main;
 import com.elder.abilityevaluate.utils.SystemUpdate;
 import com.elder.abilityevaluate.widget.CustomDialog;
 import com.elder.abilityevaluate.widget.CustomLoadingDialog;
@@ -39,6 +50,8 @@ import de.greenrobot.event.EventBus;
 
 public class BaseInformationEditActivity extends BasicActiviy {
 	public static final int DIALOG_NEW_VERSION = 0x01;
+	private static final int PHOTO_CAPTURE = 0x11;// 拍照
+	private static final int PHOTO_RESULT = 0x12;// 结果
 	private EditText a_1_1_et;
 	private EditText a_1_2_et;
 	private RadioGroup a_1_3_rg;
@@ -93,6 +106,8 @@ public class BaseInformationEditActivity extends BasicActiviy {
 	private BaseInformation baseInfo = null;
 	private EditText dateEditText = null;
 	private View picture_view = null;
+	private OCR_Main ocrMain = null;
+	private CameraTopRectView topView = null; //自定义顶层view
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -105,7 +120,7 @@ public class BaseInformationEditActivity extends BasicActiviy {
 			StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
 			StrictMode.setVmPolicy(builder.build());
 		}
-
+		ocrMain = OCR_Main.getInstance(this);
 		EventBus.getDefault().register(this);
 	}
 	/**
@@ -520,11 +535,13 @@ public class BaseInformationEditActivity extends BasicActiviy {
 	}
 
 	public void takePhoto(View v){
+		this.picture_view = v;
+		/*
 		GoActivityWithOutFinishing(OCR_Activity.class,null);
 		if(1==1){
 			return;
 		}
-		this.picture_view = v;
+
 		Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		File file = null;
 		try {
@@ -535,71 +552,221 @@ public class BaseInformationEditActivity extends BasicActiviy {
 		Uri imageUri =Uri.fromFile(file);
 		//指定照片保存路径（SD卡），temp.jpg为一个临时文件，每次拍照后这个图片都会被替换
 		cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
-		startActivityForResult(cameraIntent, 1);
-	}
+		startActivityForResult(cameraIntent, PHOTO_CAPTURE);
+		 */
 
+		ocrMain.takePhoto();
+		//topView = new CameraTopRectView(this,null);
+		//topView.draw(new Canvas());
+		//topView.bringToFront();
+	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-
-		if (resultCode == Activity.RESULT_OK){
-			String sdStatus = Environment.getExternalStorageState();
-			if(!sdStatus.equals(Environment.MEDIA_MOUNTED)){
-				System.out.println(" ------------- sd card is not avaiable ---------------");
-				return;
-			}
-			String flag = "";
+		if (resultCode == Activity.RESULT_CANCELED){
+			return;
+		}
+		if (requestCode == OCR_Main.PHOTO_CAPTURE) {
+			ocrMain.photoCapture();//裁剪图片
+			return;
+		}
+		if (requestCode == OCR_Main.PHOTO_RESULT){
+			Bitmap bitmapSelected = ocrMain.photoResult();
 			if(picture_view.getId() == R.id.picture_front_btn) {
-				flag = "_1";
+				ocrMain.startOrc(ocrHandler);
+				picture_front_iv.setImageBitmap(bitmapSelected);
 			}else if(picture_view.getId() == R.id.picture_back_btn) {
-				flag = "_2";
+				picture_back_iv.setImageBitmap(bitmapSelected);
 			}else if(picture_view.getId() == R.id.picture_full_btn){
-				flag = "_3";
-			}
-			String fileName = baseId+ flag + ".jpg";
-			//Bundle bundle = data.getExtras();
-			//该方式图片会被压缩
-			//Bitmap bitmap = (Bitmap) bundle.get("data");
-			Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory()+"/temp.jpg");
-			FileOutputStream out = null;
-			File file = Environment.getExternalStorageDirectory();
-			File myfile = null;
-			try{
-				myfile = new File(file.getCanonicalPath()+"/evaluate/images");
-				if(!myfile.exists()){
-					myfile.mkdirs();
-				}
-				System.out.println(myfile + "/" +fileName);
-				out = new FileOutputStream(myfile + "/" +fileName);
-				bitmap.compress(Bitmap.CompressFormat.JPEG,100,out);
-			}catch (IOException e){
-				e.printStackTrace();
-				return;
-			}finally {
-				try {
-					out.flush();
-					out.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}catch (Exception e){
-					e.printStackTrace();
-				}
-			}
-			if(picture_view.getId() == R.id.picture_front_btn) {
-				picture_front_iv.setImageBitmap(bitmap);
-			}else if(picture_view.getId() == R.id.picture_back_btn) {
-				picture_back_iv.setImageBitmap(bitmap);
-			}else if(picture_view.getId() == R.id.picture_full_btn){
-				picture_full_iv.setImageBitmap(bitmap);
+				picture_full_iv.setImageBitmap(bitmapSelected);
 			}
 			//Uri uri = Uri.fromFile(new File(myfile + "/" +fileName));
 			//((ImageView) findViewById(R.id.picture)).setImageURI(uri);
-			if(null != bitmap){
+			this.savePicture(bitmapSelected);
+			if(null != bitmapSelected){
 			//	bitmap.recycle();
 			}
 		}
 	}
+	/**
+	* @Author: wlf
+	* @Time: 2018/2/28 23:16
+	* @Desc: 保存图片
+	* @Params:
+	* @Return:
+	*/
+	private void savePicture(Bitmap bitmapSelected){
+		String flag = "";
+		if(picture_view.getId() == R.id.picture_front_btn) {
+			flag = "_1";
+		}else if(picture_view.getId() == R.id.picture_back_btn) {
+			flag = "_2";
+		}else if(picture_view.getId() == R.id.picture_full_btn){
+			flag = "_3";
+		}
+		String fileName = baseId+ flag + ".jpg";
+		//Bundle bundle = data.getExtras();
+		//该方式图片会被压缩
+		//Bitmap bitmap = (Bitmap) bundle.get("data");
+		//Bitmap bitmap = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory()+"/temp.jpg");
+		FileOutputStream out = null;
+		File myfile = null;
+		try{
+			myfile = new File(GlobalInfo.PIC_PATH);
+			if(!myfile.exists()){
+				myfile.mkdirs();
+			}
+			out = new FileOutputStream(myfile + "/" +fileName);
+			bitmapSelected.compress(Bitmap.CompressFormat.JPEG,100,out);
+		}catch (IOException e){
+			e.printStackTrace();
+			return;
+		}finally {
+			try {
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}catch (Exception e){
+				e.printStackTrace();
+			}
+		}
+	}
 
+	// 该handler用于处理修改结果的任务
+	public  Handler ocrHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+				case OCR_Main.SHOWRESULT:
+					String result = msg.obj.toString();
+					if (result.equals("")){
+						CustomToast.show(BaseInformationEditActivity.this,"识别失败",1);
+					}else{
+						if(result.indexOf("\n")>-1){
+							String[] arr = result.split("\n");
+							if(arr.length<5){
+								CustomToast.show(BaseInformationEditActivity.this,"识别失败",1);
+							}else{
+								System.out.println(result);
+								System.out.println("**********************************");
+								String nameStr = "";
+								String sex_natioinStr = "";
+								String idStr = "";
+								for(int i = 0 ; i < arr.length ; i++){
+									String temp = arr[i].trim().replaceAll(" ","");
+									if(temp.contains("姓名")){
+										nameStr = temp.substring(temp.indexOf("姓名"));
+									}else if(temp.contains("性别") || (temp.contains("性") && temp.contains("民"))){
+										sex_natioinStr = temp.substring(temp.indexOf("性"));
+										if("".equals(nameStr)){
+											nameStr = arr[i-1].trim().replaceAll(" ","");
+										}
+									}
+									int count = 0;
+									if(temp.contains("公")){
+										++ count ;
+									}
+									if(temp.contains("民")){
+										++ count;
+									}
+									if(temp.contains("身")){
+										++ count;
+									}
+									if(temp.contains("份")){
+										++ count;
+									}
+									if(temp.contains("号")){
+										++ count;
+									}
+									if(temp.contains("码")){
+										++ count;
+									}
+									if(count > 1){
+										idStr = temp;
+									}
+								}
+
+								String name = nameStr.length() > 2 ? nameStr.substring(2) : "";
+								String sex = sex_natioinStr.length() > 3 ? sex_natioinStr.substring(2,3) : "";
+								String nation = sex_natioinStr.length() > 5 ? sex_natioinStr.substring(5) : "";
+								String idNo = "";
+								String birthDay = "";
+								if(idStr.length()>18){
+									idNo = idStr.substring(idStr.length()-18)
+											.replaceAll("z","2").replaceAll("Z","2")
+											.replaceAll("l","1").replaceAll("L","1")
+											.replaceAll("o","0").replaceAll("O","0")
+											.replaceAll("一","1").replaceAll("二","2")
+											.replaceAll("三","3").replaceAll("四","4")
+											.replaceAll("五","5").replaceAll("六","6")
+											.replaceAll("七","7").replaceAll("八","8")
+											.replaceAll("九","9").replaceAll("g","9")
+											.replace("?","9").replace("?","9").replace("?","9")
+											.replaceAll("…","3").replaceAll("龚","4")
+											.replaceAll("~","4").replaceAll("彝","4")
+											.replaceAll("橼","4").replaceAll("辱","4");
+
+									birthDay = idNo.substring(6,10)+"-"+idNo.substring(10,12)+"-"+idNo.substring(12,14);
+								}
+								//身份证第17位：奇数为男，偶数为女
+								int sexNo = -1;
+								if(idNo.length() > 2){
+									try {
+										sexNo = Integer.parseInt(idNo.substring(idNo.length()-2,idNo.length()-1));
+									}catch (Exception e){
+										e.printStackTrace();
+									}
+								}
+
+								if(sexNo > -1){
+									if(sexNo%2 == 0){
+										a_2_2_rg.check(R.id.a_2_2_2_RB);
+									}else{
+										a_2_2_rg.check(R.id.a_2_2_1_RB);
+									}
+								}
+
+								a_2_1_et.setText(name);
+								switch (sex){
+									case "男":
+										a_2_2_rg.check(R.id.a_2_2_1_RB);
+										break;
+									case "女" :
+										a_2_2_rg.check(R.id.a_2_2_2_RB);
+										break;
+								}
+
+								try {
+									double testBirthday = Integer.parseInt(birthDay.replaceAll("-",""));
+									if(!Double.isNaN(testBirthday)){
+										a_2_3_et.setText(birthDay);
+									}
+								}catch (Exception e){
+									e.printStackTrace();
+								}
+
+								a_2_4_et.setText(idNo);
+
+								if(nation.equals("汉")){
+									a_2_6_rg.check(R.id.a_2_6_1_RB);
+								}else{
+									a_2_6_rg.check(R.id.a_2_6_2_RB);
+									a_2_6_et.setText(nation);
+								}
+							}
+						}
+					}
+					break;
+				case OCR_Main.SHOWTREATEDIMG:
+					CustomToast.show(BaseInformationEditActivity.this,"识别中......",1);
+					//picture_back_iv.setImageBitmap(ocrMain.bitmapTreated);
+					break;
+			}
+			super.handleMessage(msg);
+		}
+
+	};
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -913,7 +1080,6 @@ public class BaseInformationEditActivity extends BasicActiviy {
 
 		baseInfo.setA_3_3(a_3_3);
 		baseInfo.setA_3_4(a_3_4);
-
 		DataBaseHelper.getInstance(this,BaseInformation.class).update(baseInfo);
 		CustomToast.show(this, "保存成功", Toast.LENGTH_SHORT);
 		Bundle bundle = new Bundle();
